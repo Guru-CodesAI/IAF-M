@@ -2,10 +2,13 @@
 *.glb
 *.gltf
 
-# Videos
+# Videos (large files)
 *.mp4
 *.mov
 *.avi
+
+# Audio (large files - bgm.mp3 is committed separately if small enough)
+# *.mp3
 
 # PDFs and docs
 *.pdf

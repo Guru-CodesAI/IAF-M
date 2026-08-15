@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initArchivesGallery();
     initNewsFilters();
     initScrollReveal();
+    initBGM();
 });
 
 // 1. Dynamic Navbar Scroll Transition
@@ -612,6 +613,92 @@ function initNewsFilters() {
             });
         });
     }
+}
+
+// 8. Background Music Controller
+function initBGM() {
+    const bgm = document.createElement("audio");
+    bgm.id = "bgm-audio";
+    bgm.src = "bgm.mp3";
+    bgm.loop = true;
+    bgm.volume = 0.18;
+    bgm.preload = "auto";
+    document.body.appendChild(bgm);
+
+    // Floating mute button
+    const btn = document.createElement("button");
+    btn.id = "bgm-toggle";
+    btn.title = "Toggle Background Music";
+    btn.style.cssText = "position:fixed;bottom:24px;right:24px;z-index:9999;width:44px;height:44px;border-radius:50%;background:rgba(255,153,51,0.15);border:1px solid rgba(255,153,51,0.4);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;";
+    btn.innerHTML = `<span class="material-symbols-outlined" style="color:#FF9933;font-size:20px;">volume_up</span>`;
+    btn.addEventListener("mouseenter", () => btn.style.background = "rgba(255,153,51,0.28)");
+    btn.addEventListener("mouseleave", () => btn.style.background = isMuted ? "rgba(255,255,255,0.05)" : "rgba(255,153,51,0.15)");
+    document.body.appendChild(btn);
+
+    let isMuted = sessionStorage.getItem("bgm-muted") === "true";
+    let hasStarted = false;
+
+    function updateBtn() {
+        const icon = btn.querySelector(".material-symbols-outlined");
+        if (isMuted) {
+            icon.textContent = "volume_off";
+            btn.style.background = "rgba(255,255,255,0.05)";
+            btn.style.borderColor = "rgba(255,255,255,0.1)";
+            icon.style.color = "#888";
+        } else {
+            icon.textContent = "volume_up";
+            btn.style.background = "rgba(255,153,51,0.15)";
+            btn.style.borderColor = "rgba(255,153,51,0.4)";
+            icon.style.color = "#FF9933";
+        }
+    }
+
+    function startBGM() {
+        if (hasStarted || isMuted) return;
+        bgm.play().then(() => {
+            hasStarted = true;
+        }).catch(() => {});
+    }
+
+    // Start on first user interaction anywhere on the page
+    const startEvents = ["click", "keydown", "touchstart", "scroll"];
+    function onFirstInteraction() {
+        startBGM();
+        startEvents.forEach(ev => document.removeEventListener(ev, onFirstInteraction));
+    }
+    startEvents.forEach(ev => document.addEventListener(ev, onFirstInteraction, { once: true }));
+
+    // Toggle mute on button click
+    btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        isMuted = !isMuted;
+        sessionStorage.setItem("bgm-muted", isMuted);
+        if (isMuted) {
+            bgm.pause();
+        } else {
+            bgm.play().then(() => { hasStarted = true; }).catch(() => {});
+        }
+        updateBtn();
+    });
+
+    // Pause BGM when archive video plays, resume when it closes
+    document.addEventListener("click", (e) => {
+        const videoCard = e.target.closest("[data-video-src]");
+        if (videoCard) {
+            bgm.pause();
+        }
+    });
+
+    // Resume BGM when video modal closes (close button or backdrop click)
+    document.addEventListener("click", (e) => {
+        const isCloseBtn = e.target.closest("#video-modal-close");
+        const isBackdrop = e.target.id === "video-player-modal";
+        if ((isCloseBtn || isBackdrop) && !isMuted && hasStarted) {
+            setTimeout(() => bgm.play().catch(() => {}), 300);
+        }
+    });
+
+    updateBtn();
 }
 
 // 7. Scroll Reveal Utility
