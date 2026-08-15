@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style="background:#121414;color:#e2e2e2"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Careers Center | IAF Museum</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#454444",
+                      "secondary": "#c0c6db",
+                      "on-primary-fixed-variant": "#6d3a00",
+                      "tertiary-container": "#b3b1b1",
+                      "surface-container-high": "#282a2b",
+                      "glass-white": "rgba(255, 255, 255, 0.15)",
+                      "surface-variant": "#333535",
+                      "night-sky": "#0B1221",
+                      "outline": "#a38d7c",
+                      "on-surface": "#e2e2e2",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-low": "#1a1c1c",
+                      "surface-dim": "#121414",
+                      "on-secondary-fixed-variant": "#404758",
+                      "inverse-surface": "#e2e2e2",
+                      "background": "#121414",
+                      "inverse-primary": "#8f4e00",
+                      "on-surface-variant": "#dbc2b0",
+                      "secondary-fixed-dim": "#c0c6db",
+                      "tertiary": "#cfcccc",
+                      "surface-container": "#1e2020",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "saffron-accent": "#FF9933",
+                      "on-tertiary-fixed-variant": "#474646",
+                      "on-primary-fixed": "#2e1500",
+                      "surface-bright": "#37393a",
+                      "inverse-on-surface": "#2f3131",
+                      "on-secondary-fixed": "#151b2b",
+                      "secondary-fixed": "#dce2f8",
+                      "on-tertiary": "#313030",
+                      "error": "#ffb4ab",
+                      "legal-gray": "#888888",
+                      "surface-container-highest": "#333535",
+                      "on-primary-container": "#693800",
+                      "primary-container": "#ff9933",
+                      "surface-container-lowest": "#0c0f0f",
+                      "tertiary-fixed": "#e5e2e1",
+                      "on-secondary-container": "#b2b8cd",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "on-secondary": "#293041",
+                      "on-primary": "#4c2700",
+                      "surface": "#121414",
+                      "primary-fixed": "#ffdcc2",
+                      "surface-tint": "#ffb77a",
+                      "primary-fixed-dim": "#ffb77a",
+                      "on-background": "#e2e2e2",
+                      "outline-variant": "#554336",
+                      "on-error": "#690005",
+                      "secondary-container": "#42495a",
+                      "primary": "#ffc08d",
+                      "error-container": "#93000a",
+                      "deep-charcoal": "#121212"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "2rem",
+                      "container-max": "1440px",
+                      "section-gap": "8rem",
+                      "stack-lg": "3rem",
+                      "stack-sm": "0.5rem",
+                      "hero-padding": "10vh",
+                      "stack-md": "1.5rem"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-hero-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-hero": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "editorial-italic": [
+                              "Cormorant Garamond"
+                      ],
+                      "body-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.7",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-hero-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "display-hero": [
+                              "72px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "editorial-italic": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+          },
+          },
+        }
+      </script>
+<style>
+        /* Base styles */
+        body {
+            background-color: #121414 !important;
+            color: #e2e2e2 !important;
+            overflow-x: hidden;
+        }
+
+        /* Smooth scroll for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Glassmorphism utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-panel-hover:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col" style="background:#121414;color:#e2e2e2">
+<!-- Top Navigation Area -->
+<nav class="fixed top-0 w-full z-50 bg-glass-white backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-300" id="mainNav">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<div class="flex items-center gap-4">
+<img alt="Independent Aviation Portal Logo" class="h-10 w-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa2B1Lhd7dWMNL6A8rwCYM10Xfx13sS0ix4_1dqeGHWhTXqbCYPUNiegx5FmEJtYGxceqSv-hhqLUMm456EJCrkQhLalnQwFT38ooE0wtxColBltWG3klh_IIaHuCPhGOADMZwusac-WsQf74KpaxKf1W5Osc3wQf1FSw5xtFIYzonDEldrRwd_4EymmOL1qJ65jRDrxuW0Jbq_6J_vBwBAo5szBZv6apMpXV9mte8uhT-6TgcrWfrvw"/>
+<a class="font-display-hero-mobile text-display-hero-mobile font-extrabold tracking-tighter text-saffron-accent hover:opacity-90 transition-opacity" href="index.html">
+                    IAF MUSEUM
+                </a>
+</div>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center gap-8 font-label-caps text-label-caps">
+<a class="text-on-surface hover:text-saffron-accent hover:scale-[1.02] transition-all duration-300" href="index.html#fleet">Aircraft</a>
+<a class="text-on-surface hover:text-saffron-accent hover:scale-[1.02] transition-all duration-300" href="history.html">History</a>
+<a class="text-saffron-accent border-b-2 border-saffron-accent pb-1 hover:scale-[1.02] transition-all duration-300" href="careers.html">Careers</a>
+<a class="text-on-surface hover:text-saffron-accent hover:scale-[1.02] transition-all duration-300" href="news.html">News</a>
+</div>
+<!-- Trailing Action & Mobile Menu -->
+<div class="flex items-center gap-4">
+<a class="hidden md:inline-flex items-center justify-center bg-saffron-accent text-deep-charcoal font-label-caps text-label-caps px-6 py-3 rounded-full hover:bg-primary transition-colors text-center" href="careers.html">
+                    Join Portal
+                </a>
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[120px] pb-section-gap px-gutter max-w-container-max mx-auto w-full">
+<!-- Page Header -->
+<header class="mb-stack-lg text-center md:text-left pt-hero-padding">
+<h1 class="font-display-hero text-display-hero mb-stack-sm tracking-tighter">
+                Careers Center
+            </h1>
+<p class="font-editorial-italic text-editorial-italic text-tertiary max-w-3xl">
+                Guidance for Aspirants. Discover paths to serve in the skies.
+            </p>
+</header>
+<!-- Entry Paths Bento Grid -->
+<section class="mb-section-gap">
+<h2 class="font-headline-md text-headline-md mb-stack-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-saffron-accent" style="font-variation-settings: 'FILL' 1;">flight_takeoff</span>
+                Entry Pathways
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- NDA Card -->
+<article class="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col h-full transition-all duration-300 group">
+<div class="mb-6">
+<span class="font-label-caps text-label-caps text-saffron-accent mb-2 block">10+2 Level</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">NDA</h3>
+<p class="font-body-sm text-body-sm text-secondary">National Defence Academy</p>
+</div>
+<div class="space-y-4 mb-8 flex-grow">
+<div>
+<h4 class="font-label-caps text-label-caps text-tertiary mb-1">Eligibility</h4>
+<p class="font-body-sm text-body-sm">16.5 to 19.5 years. Physics &amp; Maths in 10+2.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-tertiary mb-1">Exam Structure</h4>
+<p class="font-body-sm text-body-sm">UPSC Written Exam + SSB Interview + Medicals.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-tertiary mb-1">Training Highlight</h4>
+<p class="font-body-sm text-body-sm">3 years at Khadakwasla, followed by specialized Air Force training.</p>
+</div>
+</div>
+</article>
+<!-- CDS Card -->
+<article class="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col h-full transition-all duration-300 group">
+<div class="mb-6">
+<span class="font-label-caps text-label-caps text-saffron-accent mb-2 block">Graduate Level</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">CDSE</h3>
+<p class="font-body-sm text-body-sm text-secondary">Combined Defence Services Exam</p>
+</div>
+<div class="space-y-4 mb-8 flex-grow">
+<div>
+<h4 class="font-label-caps text-label-caps text-tertiary mb-1">Eligibility</h4>
+<p class="font-body-sm text-body-sm">20 to 24 years. Graduates (with Physics/Maths at 10+2) or BE/B Tech.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-tertiary mb-1">Exam Structure</h4>
+<p class="font-body-sm text-body-sm">UPSC Written Exam + AFSB Interview + Medicals.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-tertiary mb-1">Training Highlight</h4>
+<p class="font-body-sm text-body-sm">Pre-commissioning training at Air Force Academy, Dundigal.</p>
+</div>
+</div>
+</article>
+<!-- AFCAT Card -->
+<article class="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col h-full transition-all duration-300 group">
+<div class="mb-6">
+<span class="font-label-caps text-label-caps text-saffron-accent mb-2 block">Graduate / Post-Grad</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">AFCAT</h3>
+<p class="font-body-sm text-body-sm text-secondary">Air Force Common Admission Test</p>
+</div>
+<div class="space-y-4 mb-8 flex-grow">
+<div>
+<h4 class="font-label-caps text-label-caps text-tertiary mb-1">Eligibility</h4>
+<p class="font-body-sm text-body-sm">20 to 24 years (Flying). Up to 26 for Ground Duty. Graduates/Engineers.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-tertiary mb-1">Exam Structure</h4>
+<p class="font-body-sm text-body-sm">Online Test + AFSB Interview. EKT for Technical branches.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-tertiary mb-1">Training Highlight</h4>
+<p class="font-body-sm text-body-sm">Specialized branch training leading to Short Service or Permanent Commission.</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="mb-section-gap text-center glass-panel p-12 rounded-2xl relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-saffron-accent/5 to-transparent pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<span class="material-symbols-outlined text-4xl text-saffron-accent mb-4" style="font-variation-settings: 'FILL' 1;">open_in_new</span>
+<h2 class="font-headline-lg text-headline-lg mb-6">Begin Your Journey</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-8">
+                    Ready to take the next step? Visit the official recruitment portals to verify current notifications and apply.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4 items-center flex-wrap">
+<a class="inline-flex items-center gap-2 bg-saffron-accent text-deep-charcoal font-label-caps text-label-caps px-8 py-4 rounded-full hover:bg-primary transition-colors group" href="https://indianairforce.nic.in" target="_blank" rel="noopener noreferrer">
+                        <span class="material-symbols-outlined text-[16px]">public</span>
+                        IAF Official Website
+                        <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-2 border border-saffron-accent/50 text-saffron-accent font-label-caps text-label-caps px-8 py-4 rounded-full hover:bg-saffron-accent/10 transition-colors group" href="https://iafrecruitment.edcil.co.in" target="_blank" rel="noopener noreferrer">
+                        <span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+                        Airmen / Agniveervayu Recruitment
+                        <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<p class="font-label-caps text-[10px] text-error mt-6 tracking-widest uppercase">
+                    DISCLAIMER: Verify all data on official portals. This is an independent information site.
+                </p>
+</div>
+</section>
+<!-- FAQ Section -->
+<section>
+<h2 class="font-headline-md text-headline-md mb-stack-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-saffron-accent">quiz</span>
+                Selection Process FAQ
+            </h2>
+<div class="space-y-4 max-w-3xl">
+<!-- FAQ Item 1 -->
+<div class="glass-panel rounded-lg overflow-hidden group">
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">What happens during the AFSB psychological tests?</h3>
+<p class="font-body-sm text-body-sm text-secondary">
+                             The psychological tests are designed to assess your personality traits and alignment with Officer Like Qualities (OLQs). They typically involve writing stories based on ambiguous pictures, word association tests, and situation reaction tests.
+                        </p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="glass-panel rounded-lg overflow-hidden group">
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Are the medical standards stricter for the Flying Branch?</h3>
+<p class="font-body-sm text-body-sm text-secondary">
+                             Yes. Flying branch candidates must meet stringent physical requirements, particularly concerning vision (e.g., no glasses allowed for fighter pilots, strict limits on myopia/hypermetropia for transport/helicopters) and anthropometric measurements (leg length, sitting height) to ensure compatibility with aircraft cockpits and ejection seats.
+                        </p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="glass-panel rounded-lg overflow-hidden group">
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Can I apply for multiple branches through AFCAT?</h3>
+<p class="font-body-sm text-body-sm text-secondary">
+                             Yes, during the application process, you can provide preferences for different branches (Flying, Ground Duty Technical, Ground Duty Non-Technical) provided you meet the specific educational eligibility criteria for each.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Area -->
+<footer class="w-full relative mt-section-gap bg-surface-container-lowest border-t border-surface-variant">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg py-16 px-gutter max-w-container-max mx-auto">
+<!-- Brand / Legal Left -->
+<div>
+<div class="font-headline-md text-headline-md text-on-surface opacity-80 mb-4">
+                    IAF MUSEUM
+                </div>
+<p class="font-body-sm text-body-sm text-saffron-accent max-w-md mb-6">
+                    Preserving aerospace history.
+                </p>
+<p class="font-label-caps text-[10px] tracking-widest text-legal-gray uppercase leading-relaxed max-w-lg">
+                    © 2024 IAF INDEPENDENT FAN PORTAL. THIS IS AN INDEPENDENT FAN/INFORMATION SITE AND IS NOT AFFILIATED WITH THE INDIAN AIR FORCE OR GOVERNMENT OF INDIA.
+                </p>
+</div>
+<!-- Links Right -->
+<div class="flex flex-col md:items-end justify-center">
+<div class="flex flex-col gap-4 font-body-sm text-body-sm md:text-right">
+<a class="text-legal-gray hover:text-on-surface transition-colors duration-200" href="archives.html">Archives</a>
+<a class="text-legal-gray hover:text-on-surface transition-colors duration-200" href="about.html">About</a>
+<a class="text-legal-gray hover:text-on-surface transition-colors duration-200" href="sources.html">Sources</a>
+<a class="text-legal-gray hover:text-on-surface transition-colors duration-200" href="legal-disclaimer.html">Legal Disclaimer</a>
+<a class="text-legal-gray hover:text-on-surface transition-colors duration-200" href="privacy-policy.html">Privacy Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<script src="global.js"></script>
+</body></html>

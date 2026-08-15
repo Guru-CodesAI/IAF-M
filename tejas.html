@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style="background:#121414;color:#e2e2e2"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HAL Tejas Mk1A - IAF Museum</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-primary": "#8f4e00",
+                      "surface": "#121414",
+                      "surface-tint": "#ffb77a",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "on-tertiary-fixed-variant": "#474646",
+                      "night-sky": "#0B1221",
+                      "surface-bright": "#37393a",
+                      "tertiary-container": "#b3b1b1",
+                      "deep-charcoal": "#121212",
+                      "outline-variant": "#554336",
+                      "surface-dim": "#121414",
+                      "on-primary-container": "#693800",
+                      "surface-container-lowest": "#0c0f0f",
+                      "surface-container-highest": "#333535",
+                      "legal-gray": "#888888",
+                      "glass-white": "rgba(255, 255, 255, 0.15)",
+                      "primary-container": "#ff9933",
+                      "on-primary": "#4c2700",
+                      "inverse-surface": "#e2e2e2",
+                      "error-container": "#93000a",
+                      "surface-variant": "#333535",
+                      "secondary": "#c0c6db",
+                      "on-error-container": "#ffdad6",
+                      "on-background": "#e2e2e2",
+                      "surface-container": "#1e2020",
+                      "surface-container-low": "#1a1c1c",
+                      "tertiary-fixed": "#e5e2e1",
+                      "inverse-on-surface": "#2f3131",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "primary-fixed": "#ffdcc2",
+                      "on-secondary-container": "#b2b8cd",
+                      "on-surface-variant": "#dbc2b0",
+                      "on-surface": "#e2e2e2",
+                      "secondary-container": "#42495a",
+                      "secondary-fixed": "#dce2f8",
+                      "on-tertiary-container": "#454444",
+                      "saffron-accent": "#FF9933",
+                      "primary-fixed-dim": "#ffb77a",
+                      "background": "#121414",
+                      "on-primary-fixed-variant": "#6d3a00",
+                      "tertiary": "#cfcccc",
+                      "on-tertiary": "#313030",
+                      "on-secondary-fixed": "#151b2b",
+                      "on-secondary": "#293041",
+                      "error": "#ffb4ab",
+                      "secondary-fixed-dim": "#c0c6db",
+                      "surface-container-high": "#282a2b",
+                      "on-secondary-fixed-variant": "#404758",
+                      "on-primary-fixed": "#2e1500",
+                      "primary": "#ffc08d",
+                      "outline": "#a38d7c",
+                      "on-error": "#690005"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "stack-sm": "0.5rem",
+                      "stack-md": "1.5rem",
+                      "gutter": "2rem",
+                      "section-gap": "8rem",
+                      "stack-lg": "3rem",
+                      "hero-padding": "10vh"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-hero": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-caps": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-hero-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "editorial-italic": [
+                              "Cormorant Garamond"
+                      ],
+                      "body-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-hero": [
+                              "72px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-hero-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "editorial-italic": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.7",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+          },
+          },
+        }
+      </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(to top, #121414 0%, transparent 50%, rgba(18, 20, 20, 0.5) 100%);
+        }
+      </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-saffron-accent selection:text-black">
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-glass-white backdrop-blur-md shadow-2xl transition-all duration-300 group">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<a class="font-display-hero-mobile text-display-hero-mobile font-extrabold tracking-tighter text-saffron-accent hover:opacity-90 transition-opacity" href="index.html">IAF MUSEUM</a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-saffron-accent border-b-2 border-saffron-accent pb-1" href="index.html#fleet">Aircraft</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-saffron-accent transition-colors duration-300" href="history.html">History</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-saffron-accent transition-colors duration-300" href="careers.html">Careers</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-saffron-accent transition-colors duration-300" href="news.html">News</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="careers.html" class="bg-primary text-on-primary px-6 py-2 rounded font-label-caps text-label-caps hover:bg-saffron-accent transition-colors text-center flex items-center justify-center">Join Portal</a>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[100vh] w-full flex items-end pb-24 md:pb-32 px-gutter overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full" data-alt="A cinematic, high-contrast photograph of a HAL Tejas Mk1A fighter jet in mid-flight against a deep, dark atmospheric sky. The aircraft is illuminated by dramatic edge lighting that highlights its aerodynamic delta wing design. The background is a moody, dark gray sky with subtle cloud textures, emphasizing the sleek, modern lines of the jet in a premium dark mode aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAw6-HcZ2kNpnlloh2n78Lvdxgn8nKi_kbgjDtCsH7QptPIXrZGW0V3Qeh4ceMOUmYQHgyLYSjmNsh2UljOIjny_E_bQQW6uvqcDiVJ3p6JG_bFG_b3WgGaOtxpJYyuNpRvktBvHD45IutBODJcxXl5090Pe1WSpwaRmpuYdd0ggznDddFi9w9z6O-YoSXIYEyJe__cUIfxhoLswFnNhy9Rvy4_KTe5hORPA7yCCI7egPoeBaMnb5sKUg')"></div>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto">
+<div class="max-w-3xl">
+<span class="font-label-caps text-label-caps text-saffron-accent tracking-widest block mb-4">LIGHT COMBAT AIRCRAFT</span>
+<h1 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero text-on-surface mb-6">HAL TEJAS Mk1A</h1>
+<p class="font-body-lg text-body-lg text-on-surface/80 max-w-2xl">
+                        The indigenous backbone of the Indian Air Force. A 4th+ generation lightweight multirole fighter designed for air superiority, ground attack, and reconnaissance.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Technical Specs Bento Grid -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto">
+<div class="mb-16">
+<span class="font-label-caps text-label-caps text-saffron-accent tracking-widest block mb-4">01 / CAPABILITIES</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Technical Specifications</h2>
+<p class="font-label-caps text-[10px] text-legal-gray tracking-widest mt-2">SOURCE: HAL TECHNICAL DATASHEET / ADA PROGRAMME DOCUMENTATION / PIB ARCHIVES</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Speed Card -->
+<div class="glass-panel p-8 rounded-lg relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+<span class="material-symbols-outlined text-saffron-accent text-4xl mb-4 block">speed</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Mach 1.8</h3>
+<p class="font-body-sm text-body-sm text-secondary">Maximum Speed</p>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-saffron-accent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+</div>
+<!-- Range Card -->
+<div class="glass-panel p-8 rounded-lg relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+<span class="material-symbols-outlined text-saffron-accent text-4xl mb-4 block">radar</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">1,850 km</h3>
+<p class="font-body-sm text-body-sm text-secondary">Combat Range</p>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-saffron-accent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+</div>
+<!-- Altitude Card -->
+<div class="glass-panel p-8 rounded-lg relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+<span class="material-symbols-outlined text-saffron-accent text-4xl mb-4 block">flight_takeoff</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">50,000 ft</h3>
+<p class="font-body-sm text-body-sm text-secondary">Service Ceiling</p>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-saffron-accent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+</div>
+<!-- Detailed Specs Table (Spans 2 columns on desktop) -->
+<div class="glass-panel p-8 rounded-lg md:col-span-2">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-surface-variant pb-4">Avionics &amp; Systems</h3>
+<ul class="space-y-4">
+<li class="flex justify-between items-center py-2 border-b border-white/5">
+<span class="font-body-sm text-body-sm text-secondary">Radar</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">AESA (Active Electronically Scanned Array)</span>
+</li>
+<li class="flex justify-between items-center py-2 border-b border-white/5">
+<span class="font-body-sm text-body-sm text-secondary">Electronic Warfare</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">Advanced Self-Protection Jammer (ASPJ)</span>
+</li>
+<li class="flex justify-between items-center py-2 border-b border-white/5">
+<span class="font-body-sm text-body-sm text-secondary">Flight Control</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">Quadruplex Digital Fly-by-Wire</span>
+</li>
+<li class="flex justify-between items-center py-2 border-b border-white/5">
+<span class="font-body-sm text-body-sm text-secondary">Powerplant</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">1 × GE F404-GE-IN20 turbofan</span>
+</li>
+</ul>
+</div>
+<!-- Weaponry Summary -->
+<div class="glass-panel p-8 rounded-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-surface-variant pb-4">Armament</h3>
+<p class="font-body-sm text-body-sm text-on-surface/80 mb-4">
+                        Equipped with 8 hardpoints capable of carrying air-to-air, air-to-surface, and anti-ship missiles, alongside precision-guided munitions.
+                    </p>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps text-saffron-accent hover:text-white transition-colors" href="archives.html">
+                        View Full Loadout <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Indigenous Development Narrative -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto relative">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="relative h-[600px] rounded-xl overflow-hidden glass-panel">
+<div class="bg-cover bg-center w-full h-full opacity-80 mix-blend-screen" data-alt="A highly detailed, technical wireframe or 3D schematic rendering of the HAL Tejas Mk1A fighter jet. The image features glowing orange and white lines against a deep black, grid-like background, emphasizing the advanced aerospace engineering and indigenous design of the aircraft. The aesthetic is modern, cinematic, and technical, fitting a premium digital museum interface." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACOeCGoUGNdV96dd3IfiA4j9bFRe2m8BxhwwnwqpYemga8tYaQRpX6O1-lA6-cnP1RPrgSHwL5Yoa2Tf2gmLXqTzwEJ1Vn7sU344Agf-9GihnuZCGDY8lGIzEnRiUgjKc7CuATNog5SjH8kPl0oJxZnr1J7HGGk6JyOPcWq2-7Tme7HYBlyCP1qZPMmOh-7ukjcP5D7VcZXD5S_FOoImhXKTf0g-7yFYXXm0e0Za_t8psozqhK5LHs1g')"></div>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-saffron-accent tracking-widest block mb-4">02 / ORIGINS</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">A Legacy of Indigenous Engineering</h2>
+<p class="font-editorial-italic text-editorial-italic text-on-surface/80 mb-6">
+                        "The Tejas represents a defining moment in India's journey towards self-reliance in aerospace technology."
+                    </p>
+<p class="font-body-lg text-body-lg text-secondary mb-8">
+                        Developed by the Aeronautical Development Agency (ADA) in collaboration with Hindustan Aeronautics Limited (HAL), the Tejas Mk1A incorporates numerous improvements over its predecessor, including mid-air refueling, advanced beyond-visual-range (BVR) missile capabilities, and updated radar systems.
+                    </p>
+<a href="history.html" class="border border-white/20 bg-white/5 hover:bg-white/10 text-on-surface px-8 py-3 rounded font-label-caps text-label-caps transition-colors backdrop-blur-sm text-center inline-block">
+                        Explore Development History
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-lowest w-full relative mt-section-gap border-t border-surface-variant">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg py-16 px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface opacity-80 mb-4">IAF MUSEUM</h2>
+<p class="font-body-sm text-body-sm text-secondary max-w-md mb-8">
+                        Preserving the legacy of Indian military aviation through digital immersion.
+                    </p>
+</div>
+<p class="font-label-caps text-[10px] tracking-widest text-legal-gray uppercase mt-8 md:mt-0">
+                    © 2024 IAF INDEPENDENT FAN PORTAL. THIS IS AN INDEPENDENT FAN/INFORMATION SITE AND IS NOT AFFILIATED WITH THE INDIAN AIR FORCE OR GOVERNMENT OF INDIA.
+                </p>
+</div>
+<div class="flex flex-col md:items-end justify-between">
+<ul class="space-y-4 md:text-right">
+<li><a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors duration-200" href="archives.html">Archives</a></li>
+<li><a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors duration-200" href="about.html">About</a></li>
+<li><a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors duration-200" href="sources.html">Sources</a></li>
+<li><a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors duration-200" href="legal-disclaimer.html">Legal Disclaimer</a></li>
+<li><a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors duration-200" href="privacy-policy.html">Privacy Policy</a></li>
+</ul>
+<div class="mt-8 md:mt-0">
+<p class="font-label-caps text-[10px] tracking-widest text-legal-gray text-right">
+                        UNOFFICIAL FAN SITE - NOT AFFILIATED WITH THE IAF OR MoD
+                    </p>
+</div>
+</div>
+</div>
+</footer>
+<script src="global.js"></script>
+</body></html>

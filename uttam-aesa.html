@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="dark" lang="en" style="background:#121414;color:#e2e2e2"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Uttam AESA Radar — Indigenous Tech | Vayu Gaurav</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "background": "#121414", "surface": "#121414", "surface-container": "#1e2020",
+        "surface-container-low": "#1a1c1c", "surface-container-high": "#282a2b",
+        "surface-variant": "#333535", "on-surface": "#e2e2e2", "on-surface-variant": "#dbc2b0",
+        "secondary": "#c0c6db", "saffron-accent": "#FF9933", "deep-charcoal": "#121212",
+        "glass-white": "rgba(255,255,255,0.15)", "legal-gray": "#888888",
+        "primary": "#ffc08d", "on-primary": "#4c2700", "error": "#ffb4ab"
+      },
+      spacing: { "gutter": "2rem", "section-gap": "8rem", "stack-lg": "3rem", "stack-md": "1.5rem", "stack-sm": "0.5rem" },
+      fontFamily: { "label-caps": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "editorial-italic": ["Cormorant Garamond"] },
+      fontSize: {
+        "label-caps": ["12px", {"lineHeight":"1.0","letterSpacing":"0.1em","fontWeight":"700"}],
+        "body-lg": ["18px", {"lineHeight":"1.7","fontWeight":"400"}],
+        "body-sm": ["14px", {"lineHeight":"1.6","fontWeight":"400"}],
+        "display-hero": ["72px", {"lineHeight":"1.1","letterSpacing":"-0.04em","fontWeight":"800"}],
+        "display-hero-mobile": ["40px", {"lineHeight":"1.2","letterSpacing":"-0.02em","fontWeight":"800"}],
+        "headline-md": ["32px", {"lineHeight":"1.3","fontWeight":"600"}],
+        "headline-lg": ["48px", {"lineHeight":"1.2","fontWeight":"700"}],
+        "editorial-italic": ["32px", {"lineHeight":"1.4","fontWeight":"400"}]
+      }
+    }
+  }
+}
+</script>
+<style>
+  .glass-panel { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); }
+  .spec-card { background: rgba(255,153,51,0.05); border: 1px solid rgba(255,153,51,0.15); }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  .pulse-dot { animation: pulse-dot 2s infinite; }
+  @keyframes pulse-dot { 0%,100%{ opacity:1; transform:scale(1); } 50%{ opacity:0.5; transform:scale(1.4); } }
+  .scan-line { position: absolute; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,153,51,0.6), transparent); animation: scan 4s linear infinite; }
+  @keyframes scan { 0%{ top: 0; opacity: 0; } 10%{ opacity: 1; } 90%{ opacity: 1; } 100%{ top: 100%; opacity: 0; } }
+</style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 bg-glass-white backdrop-blur-xl border-b border-white/10 shadow-2xl">
+<div class="flex justify-between items-center h-20 px-gutter max-w-[1440px] mx-auto">
+  <a href="index.html" class="font-display-hero-mobile text-[24px] font-extrabold tracking-tighter text-saffron-accent hover:opacity-90 transition-opacity">IAF MUSEUM</a>
+  <div class="hidden md:flex gap-8 items-center font-label-caps text-label-caps">
+    <a class="text-on-surface hover:text-saffron-accent transition-colors" href="index.html#fleet">Aircraft</a>
+    <a class="text-on-surface hover:text-saffron-accent transition-colors" href="history.html">History</a>
+    <a class="text-on-surface hover:text-saffron-accent transition-colors" href="careers.html">Careers</a>
+    <a class="text-saffron-accent border-b-2 border-saffron-accent pb-1" href="news.html">News</a>
+  </div>
+  <div class="flex items-center gap-4">
+    <button class="md:hidden text-saffron-accent"><span class="material-symbols-outlined">menu</span></button>
+    <a href="careers.html" class="hidden md:block bg-saffron-accent text-deep-charcoal font-label-caps text-label-caps px-6 py-3 rounded hover:brightness-110 transition-all">Join Portal</a>
+  </div>
+</div>
+</nav>
+
+<main class="flex-grow pt-20">
+
+  <!-- Hero -->
+  <header class="relative w-full min-h-[70vh] flex items-end overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDRl68UEuAlgw2UpaufzXEniaCctsCOeR-Y2uCht_25qyEp-hhXvytB_rjzM6RVzEcsRoRl-3uHbGRORREhjBkaQE7y275rbG0MbupXm4xpXQb8_dOrg9qhnpCIrTMA9xFZxScYszfUbij53uHwsn5V1uV58YZdZ5B5_7u5z5Ky_Y2xJoi-XUMfafcxzEI7sCCvj0RfgqJ1ajfztwDgXKsrXHdXucXE0T5j14au1oAjleCnBsxGiHGlTg')">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/98 via-black/70 to-black/30"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-transparent"></div>
+      <div class="scan-line"></div>
+    </div>
+    <div class="relative z-10 w-full max-w-[1440px] mx-auto px-gutter pb-16">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-flex items-center gap-1.5 bg-saffron-accent/20 border border-saffron-accent/40 text-saffron-accent font-label-caps text-[10px] px-3 py-1 rounded tracking-widest">
+            <span class="pulse-dot w-1.5 h-1.5 rounded-full bg-saffron-accent inline-block"></span>
+            INDIGENOUS TECH · DRDO
+          </span>
+          <span class="font-label-caps text-[10px] text-white/40 tracking-widest">CLASSIFIED: UNCLASSIFIED PUBLIC DATA</span>
+        </div>
+        <h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-[60px] text-white font-extrabold tracking-tighter mb-4 leading-tight" style="text-shadow:0 2px 40px rgba(0,0,0,0.95);">
+          Uttam AESA Radar
+        </h1>
+        <p class="font-headline-md text-[20px] text-saffron-accent mb-4">Integration Enters Final Phase</p>
+        <p class="font-body-lg text-body-lg text-white/80 max-w-2xl mb-8" style="text-shadow:0 1px 20px rgba(0,0,0,0.9);">
+          India's indigenous Active Electronically Scanned Array fire-control radar — developed by DRDO's Electronics Research and Development Establishment (LRDE) — enters the final integration phase, marking a pivotal milestone in defence self-reliance.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <span class="glass-panel font-label-caps text-[10px] text-saffron-accent px-4 py-2 rounded tracking-widest">FIRE-CONTROL RADAR</span>
+          <span class="glass-panel font-label-caps text-[10px] text-white/60 px-4 py-2 rounded tracking-widest">SOURCE: DRDO PRESS RELEASE</span>
+          <span class="glass-panel font-label-caps text-[10px] text-white/60 px-4 py-2 rounded tracking-widest">AUG 2026</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Stats -->
+  <section class="bg-surface-container border-y border-surface-variant">
+    <div class="max-w-[1440px] mx-auto px-gutter py-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="font-display-hero-mobile text-[32px] font-extrabold text-saffron-accent">128+</div>
+          <div class="font-label-caps text-[10px] text-secondary tracking-widest mt-1">T/R MODULES</div>
+        </div>
+        <div class="text-center">
+          <div class="font-display-hero-mobile text-[32px] font-extrabold text-saffron-accent">10+</div>
+          <div class="font-label-caps text-[10px] text-secondary tracking-widest mt-1">SIMULTANEOUS TARGETS</div>
+        </div>
+        <div class="text-center">
+          <div class="font-display-hero-mobile text-[32px] font-extrabold text-saffron-accent">100+ km</div>
+          <div class="font-label-caps text-[10px] text-secondary tracking-widest mt-1">DETECTION RANGE</div>
+        </div>
+        <div class="text-center">
+          <div class="font-display-hero-mobile text-[32px] font-extrabold text-saffron-accent">LRDE</div>
+          <div class="font-label-caps text-[10px] text-secondary tracking-widest mt-1">DRDO LABORATORY</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="max-w-[1440px] mx-auto px-gutter py-section-gap">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-lg">
+
+      <!-- Body -->
+      <div class="lg:col-span-8 flex flex-col gap-stack-lg">
+
+        <!-- Background -->
+        <article class="reveal">
+          <span class="font-label-caps text-label-caps text-saffron-accent tracking-widest block mb-3">01 / BACKGROUND</span>
+          <h2 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Project Origins & Mandate</h2>
+          <p class="font-body-lg text-body-lg text-secondary mb-4">
+            The Uttam AESA (Active Electronically Scanned Array) fire-control radar is a flagship programme of the Defence Research and Development Organisation (DRDO), developed at the Electronics & Radar Development Establishment (LRDE) in Bengaluru. The programme was conceived to give the Tejas Light Combat Aircraft a world-class, indigenously produced radar, eliminating reliance on foreign fire-control systems.
+          </p>
+          <p class="font-body-lg text-body-lg text-secondary">
+            Named after the Sanskrit word for "excellent" or "supreme", Uttam represents India's deepest foray into active phased-array radar technology — a domain previously held only by a handful of nations. The programme is a critical pillar of India's <em>Aatmanirbhar Bharat</em> (self-reliant India) defence initiative.
+          </p>
+        </article>
+
+        <!-- How AESA Works -->
+        <article class="reveal">
+          <span class="font-label-caps text-label-caps text-saffron-accent tracking-widest block mb-3">02 / TECHNOLOGY</span>
+          <h2 class="font-headline-md text-headline-md text-on-surface mb-stack-md">How Active Phased-Array Works</h2>
+          <p class="font-body-lg text-body-lg text-secondary mb-4">
+            Unlike older mechanically-scanned radars that physically rotate an antenna dish, an AESA radar uses hundreds of miniature Transmit/Receive (T/R) modules, each capable of independently generating and receiving radio frequency signals. The beam is "electronically" steered by adjusting the phase of signals across these modules — enabling near-instantaneous directional shifts without any moving parts.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
+            <div class="spec-card rounded-xl p-5 text-center">
+              <span class="material-symbols-outlined text-saffron-accent text-3xl mb-3 block" style="font-variation-settings:'FILL' 1;">radar</span>
+              <div class="font-label-caps text-[10px] text-saffron-accent tracking-widest mb-1">BEAM AGILITY</div>
+              <p class="font-body-sm text-body-sm text-secondary">Electronically steered beam switches targets in microseconds — no mechanical lag.</p>
+            </div>
+            <div class="spec-card rounded-xl p-5 text-center">
+              <span class="material-symbols-outlined text-saffron-accent text-3xl mb-3 block" style="font-variation-settings:'FILL' 1;">track_changes</span>
+              <div class="font-label-caps text-[10px] text-saffron-accent tracking-widest mb-1">MULTI-TARGET</div>
+              <p class="font-body-sm text-body-sm text-secondary">Simultaneously tracks and engages more than 10 aerial targets across multiple threat axes.</p>
+            </div>
+            <div class="spec-card rounded-xl p-5 text-center">
+              <span class="material-symbols-outlined text-saffron-accent text-3xl mb-3 block" style="font-variation-settings:'FILL' 1;">security</span>
+              <div class="font-label-caps text-[10px] text-saffron-accent tracking-widest mb-1">LOW OBSERVABILITY</div>
+              <p class="font-body-sm text-body-sm text-secondary">Low probability of interception (LPI) waveforms make the radar harder for adversaries to detect.</p>
+            </div>
+          </div>
+          <p class="font-body-lg text-body-lg text-secondary">
+            This beam agility also enables the radar to simultaneously perform multiple functions — air-to-air target search, ground mapping, weather avoidance, and electronic warfare support — without mode-switching delays, giving the pilot a significant tactical advantage.
+          </p>
+        </article>
+
+        <!-- Development Timeline -->
+        <article class="reveal">
+          <span class="font-label-caps text-label-caps text-saffron-accent tracking-widest block mb-3">03 / DEVELOPMENT</span>
+          <h2 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Programme Milestones</h2>
+          <div class="flex flex-col gap-4">
+            <div class="flex gap-4 items-start p-4 bg-surface-container-low rounded-xl border border-surface-variant">
+              <div class="w-16 shrink-0 text-center">
+                <div class="font-label-caps text-[10px] text-saffron-accent tracking-widest">2010</div>
+              </div>
+              <div>
+                <div class="font-label-caps text-[10px] text-on-surface tracking-widest mb-1">PROGRAMME LAUNCH</div>
+                <p class="font-body-sm text-body-sm text-secondary">DRDO LRDE formally initiates development of an indigenous AESA fire-control radar for the Tejas LCA programme, with MoD backing under the Technology Perspective Capability Roadmap.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start p-4 bg-surface-container-low rounded-xl border border-surface-variant">
+              <div class="w-16 shrink-0 text-center">
+                <div class="font-label-caps text-[10px] text-saffron-accent tracking-widest">2017</div>
+              </div>
+              <div>
+                <div class="font-label-caps text-[10px] text-on-surface tracking-widest mb-1">PROTOTYPE DEMONSTRATION</div>
+                <p class="font-body-sm text-body-sm text-secondary">First working prototype demonstrated. Ground testing validates antenna performance and T/R module integration across simulated threat scenarios.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start p-4 bg-surface-container-low rounded-xl border border-surface-variant">
+              <div class="w-16 shrink-0 text-center">
+                <div class="font-label-caps text-[10px] text-saffron-accent tracking-widest">2020</div>
+              </div>
+              <div>
+                <div class="font-label-caps text-[10px] text-on-surface tracking-widest mb-1">FLIGHT TRIAL PHASE</div>
+                <p class="font-body-sm text-body-sm text-secondary">Uttam begins airborne trials integrated onto a modified Tejas platform at Aeronautical Test Range, Challakere. Multi-target tracking validated in controlled environments.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start p-4 bg-surface-container-low rounded-xl border border-saffron-accent/30">
+              <div class="w-16 shrink-0 text-center">
+                <div class="font-label-caps text-[10px] text-saffron-accent tracking-widest">2026</div>
+              </div>
+              <div>
+                <div class="font-label-caps text-[10px] text-saffron-accent tracking-widest mb-1">FINAL INTEGRATION — CURRENT PHASE</div>
+                <p class="font-body-sm text-body-sm text-secondary">Full integration into Tejas Mk1A avionics suite enters final qualification phase. Uttam demonstrates superior multi-target tracking against 10+ simultaneous targets. Clearance for series production expected upon successful completion.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Significance -->
+        <article class="reveal">
+          <span class="font-label-caps text-label-caps text-saffron-accent tracking-widest block mb-3">04 / SIGNIFICANCE</span>
+          <h2 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Strategic Impact</h2>
+          <div class="border-l-2 border-saffron-accent pl-6 py-2 mb-6">
+            <p class="font-editorial-italic text-[22px] text-on-surface italic leading-relaxed">
+              "Uttam places India in an elite club — alongside the US, Europe, Russia, and China — of nations capable of indigenously designing and producing an airborne AESA fire-control radar."
+            </p>
+            <span class="font-label-caps text-[10px] text-legal-gray tracking-widest mt-2 block">— DRDO LRDE ASSESSMENT (PUBLIC RELEASE)</span>
+          </div>
+          <p class="font-body-lg text-body-lg text-secondary mb-4">
+            The radar's induction into the Tejas Mk1A directly addresses one of the most critical technology dependencies in the LCA programme. Prior variants relied on the Israeli EL/M-2032 mechanically-scanned radar; Uttam marks a full transition to domestic supply.
+          </p>
+          <p class="font-body-lg text-body-lg text-secondary">
+            Beyond the Tejas, Uttam's modular architecture means it can be scaled and adapted for future platforms — including the Advanced Medium Combat Aircraft (AMCA) — laying the groundwork for an entire ecosystem of indigenous airborne radar capability.
+          </p>
+        </article>
+
+      </div>
+
+      <!-- Sidebar Specs -->
+      <aside class="lg:col-span-4">
+        <div class="sticky top-28 flex flex-col gap-6">
+          <!-- Spec Sheet -->
+          <div class="spec-card rounded-2xl p-6">
+            <h3 class="font-label-caps text-label-caps text-saffron-accent tracking-widest mb-5">TECHNICAL PARAMETERS</h3>
+            <div class="flex flex-col gap-4">
+              <div class="flex justify-between items-center border-b border-white/5 pb-3">
+                <span class="font-label-caps text-[10px] text-secondary tracking-widest">TYPE</span>
+                <span class="font-body-sm text-body-sm text-on-surface font-semibold text-right">Airborne Fire-Control AESA</span>
+              </div>
+              <div class="flex justify-between items-center border-b border-white/5 pb-3">
+                <span class="font-label-caps text-[10px] text-secondary tracking-widest">DEVELOPER</span>
+                <span class="font-body-sm text-body-sm text-on-surface font-semibold text-right">DRDO — LRDE, Bengaluru</span>
+              </div>
+              <div class="flex justify-between items-center border-b border-white/5 pb-3">
+                <span class="font-label-caps text-[10px] text-secondary tracking-widest">T/R MODULES</span>
+                <span class="font-body-sm text-body-sm text-on-surface font-semibold">128+ (GaN-based)</span>
+              </div>
+              <div class="flex justify-between items-center border-b border-white/5 pb-3">
+                <span class="font-label-caps text-[10px] text-secondary tracking-widest">DETECT RANGE</span>
+                <span class="font-body-sm text-body-sm text-on-surface font-semibold">100+ km (est.)</span>
+              </div>
+              <div class="flex justify-between items-center border-b border-white/5 pb-3">
+                <span class="font-label-caps text-[10px] text-secondary tracking-widest">TRACK CAPACITY</span>
+                <span class="font-body-sm text-body-sm text-on-surface font-semibold">10+ simultaneous</span>
+              </div>
+              <div class="flex justify-between items-center border-b border-white/5 pb-3">
+                <span class="font-label-caps text-[10px] text-secondary tracking-widest">PLATFORM</span>
+                <span class="font-body-sm text-body-sm text-on-surface font-semibold">Tejas Mk1A (primary)</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="font-label-caps text-[10px] text-secondary tracking-widest">STATUS</span>
+                <span class="inline-flex items-center gap-1.5 text-saffron-accent font-label-caps text-[10px] tracking-widest">
+                  <span class="pulse-dot w-1.5 h-1.5 rounded-full bg-saffron-accent inline-block"></span>
+                  FINAL INTEGRATION
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Source -->
+          <div class="glass-panel rounded-xl p-5">
+            <h4 class="font-label-caps text-[10px] text-saffron-accent tracking-widest mb-3">SOURCE & CLASSIFICATION</h4>
+            <p class="font-body-sm text-body-sm text-secondary mb-3">All data sourced from publicly released DRDO press bulletins, PIB announcements, and official MoD statements. No classified or restricted data is reproduced.</p>
+            <a href="https://drdo.gov.in" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-label-caps text-[10px] text-saffron-accent hover:text-white transition-colors tracking-widest">
+              <span class="material-symbols-outlined text-[14px]">open_in_new</span>DRDO OFFICIAL SITE
+            </a>
+          </div>
+
+          <!-- Related -->
+          <div class="glass-panel rounded-xl p-5">
+            <h4 class="font-label-caps text-[10px] text-saffron-accent tracking-widest mb-4">RELATED DISPATCHES</h4>
+            <div class="flex flex-col gap-3">
+              <a href="tejas.html" class="flex items-center gap-3 group hover:text-saffron-accent transition-colors">
+                <span class="material-symbols-outlined text-saffron-accent text-[18px]">flight</span>
+                <span class="font-body-sm text-body-sm text-secondary group-hover:text-saffron-accent transition-colors">LCA Tejas Mk1A — High-Altitude Trials</span>
+              </a>
+              <a href="tarang-shakti.html" class="flex items-center gap-3 group hover:text-saffron-accent transition-colors">
+                <span class="material-symbols-outlined text-saffron-accent text-[18px]">public</span>
+                <span class="font-body-sm text-body-sm text-secondary group-hover:text-saffron-accent transition-colors">Exercise Tarang Shakti — Strategic Reach</span>
+              </a>
+              <a href="news.html" class="flex items-center gap-3 group hover:text-saffron-accent transition-colors">
+                <span class="material-symbols-outlined text-saffron-accent text-[18px]">article</span>
+                <span class="font-body-sm text-body-sm text-secondary group-hover:text-saffron-accent transition-colors">All News Dispatches</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-surface-variant bg-surface-container-low py-12 px-gutter mt-auto">
+  <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-start gap-6">
+    <div>
+      <div class="font-display-hero-mobile text-[20px] font-extrabold text-on-surface opacity-80 mb-2">IAF MUSEUM</div>
+      <p class="font-label-caps text-[10px] text-legal-gray max-w-sm tracking-widest">© 2024 IAF INDEPENDENT FAN PORTAL. NOT AFFILIATED WITH THE INDIAN AIR FORCE OR GOVERNMENT OF INDIA.</p>
+    </div>
+    <div class="flex flex-wrap gap-6 font-body-sm text-body-sm">
+      <a class="text-legal-gray hover:text-on-surface transition-colors" href="news.html">News</a>
+      <a class="text-legal-gray hover:text-on-surface transition-colors" href="archives.html">Archives</a>
+      <a class="text-legal-gray hover:text-on-surface transition-colors" href="about.html">About</a>
+      <a class="text-legal-gray hover:text-on-surface transition-colors" href="sources.html">Sources</a>
+      <a class="text-legal-gray hover:text-on-surface transition-colors" href="legal-disclaimer.html">Legal Disclaimer</a>
+      <a class="text-legal-gray hover:text-on-surface transition-colors" href="privacy-policy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="global.js"></script>
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => obs.observe(el));
+</script>
+</body></html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style="background:#121414;color:#e2e2e2"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vayu Gaurav: News Briefs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Cormorant+Garamond:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#e2e2e2",
+                        "on-secondary-container": "#b2b8cd",
+                        "secondary-fixed": "#dce2f8",
+                        "surface-container-highest": "#333535",
+                        "on-error": "#690005",
+                        "tertiary-container": "#b3b1b1",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "inverse-on-surface": "#2f3131",
+                        "background": "#121414",
+                        "outline": "#a38d7c",
+                        "primary-fixed": "#ffdcc2",
+                        "tertiary-fixed": "#e5e2e1",
+                        "primary-fixed-dim": "#ffb77a",
+                        "surface-container": "#1e2020",
+                        "saffron-accent": "#FF9933",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-primary-container": "#693800",
+                        "surface-variant": "#333535",
+                        "night-sky": "#0B1221",
+                        "inverse-primary": "#8f4e00",
+                        "surface-container-lowest": "#0c0f0f",
+                        "error": "#ffb4ab",
+                        "on-secondary": "#293041",
+                        "surface-container-high": "#282a2b",
+                        "legal-gray": "#888888",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "on-primary-fixed": "#2e1500",
+                        "surface": "#121414",
+                        "on-primary-fixed-variant": "#6d3a00",
+                        "surface-bright": "#37393a",
+                        "tertiary": "#cfcccc",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#554336",
+                        "surface-dim": "#121414",
+                        "on-surface": "#e2e2e2",
+                        "secondary-container": "#42495a",
+                        "secondary": "#c0c6db",
+                        "primary": "#ffc08d",
+                        "on-tertiary-container": "#454444",
+                        "on-tertiary": "#313030",
+                        "glass-white": "rgba(255, 255, 255, 0.15)",
+                        "on-secondary-fixed-variant": "#404758",
+                        "on-background": "#e2e2e2",
+                        "deep-charcoal": "#121212",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "primary-container": "#ff9933",
+                        "on-primary": "#4c2700",
+                        "on-surface-variant": "#dbc2b0",
+                        "surface-container-low": "#1a1c1c",
+                        "surface-tint": "#ffb77a",
+                        "on-secondary-fixed": "#151b2b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "8rem",
+                        "stack-md": "1.5rem",
+                        "gutter": "2rem",
+                        "stack-sm": "0.5rem",
+                        "stack-lg": "3rem",
+                        "hero-padding": "10vh",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "display-hero-mobile": ["Plus Jakarta Sans"],
+                        "editorial-italic": ["Cormorant Garamond"],
+                        "display-hero": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-hero-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "editorial-italic": ["32px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "display-hero": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-sm": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-shadow {
+            text-shadow: 0 2px 30px rgba(0,0,0,0.95), 0 4px 60px rgba(0,0,0,0.85);
+        }
+        .hero-eyebrow {
+            text-shadow: 0 1px 10px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 shadow-2xl bg-glass-white backdrop-blur-xl border-b border-white/10 hidden md:flex">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto w-full">
+<a href="index.html" class="font-display-hero-mobile text-display-hero-mobile font-extrabold tracking-tighter text-saffron-accent hover:opacity-90 transition-opacity">
+                IAF MUSEUM
+            </a>
+<div class="flex space-x-gutter">
+<a class="font-label-caps text-label-caps text-on-surface hover:text-saffron-accent transition-colors duration-300 hover:backdrop-brightness-125 hover:scale-[1.02] transition-all" href="index.html#fleet">Aircraft</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-saffron-accent transition-colors duration-300 hover:backdrop-brightness-125 hover:scale-[1.02] transition-all" href="history.html">History</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-saffron-accent transition-colors duration-300 hover:backdrop-brightness-125 hover:scale-[1.02] transition-all" href="careers.html">Careers</a>
+<a class="font-label-caps text-label-caps text-saffron-accent border-b-2 border-saffron-accent pb-1 scale-95 duration-100" href="news.html">News</a>
+</div>
+<a href="careers.html" class="font-label-caps text-label-caps bg-saffron-accent text-on-primary-container px-6 py-3 rounded hover:bg-primary-container transition-colors text-center flex items-center justify-center">
+                Join Portal
+            </a>
+</div>
+</nav>
+<!-- Mobile Nav Anchor -->
+<nav class="fixed top-0 w-full z-50 bg-glass-white backdrop-blur-xl border-b border-white/10 md:hidden flex justify-between items-center h-16 px-gutter">
+<a href="index.html" class="font-display-hero-mobile text-[24px] font-extrabold tracking-tighter text-saffron-accent leading-none hover:opacity-90 transition-opacity">
+            IAF MUSEUM
+        </a>
+<span class="material-symbols-outlined text-saffron-accent">menu</span>
+</nav>
+<main class="flex-grow pt-20 md:pt-0">
+<!-- Hero Section -->
+<section class="relative h-[80vh] md:h-screen w-full flex items-end">
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGkvgSiq0KMs0GNtrQhksI84HzjVQFeN0nOXTntbJeHfPqu6k_a7ouPXQPDPtEJPBFZQq7Ji0Dz2tAuXdeBNZpCqb-b1EPVNLXmAY_hFLaZyRztx8yfwbLz4L7DwGep9hHGkwyiYsVae6422JsWXA8v1P4xYss6RIGm0bz6rI9ROnMo40JGHB4xYwPHM0nrfVOSOABHEYLGfpGnAyh74azu4oGmPiAgaZz0RC1BlroyxzM5ytvtwdikQ')"></div>
+<!-- Stronger multi-layer gradient for readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/98 via-black/70 to-black/30"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-gutter pb-section-gap">
+<div class="max-w-3xl">
+<span class="hero-eyebrow font-label-caps text-label-caps text-saffron-accent mb-stack-sm block tracking-widest">FEATURED DISPATCH</span>
+<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-white mb-stack-md text-shadow">Modernizing the Fleet: New Induction Milestones</h1>
+<p class="font-body-lg text-body-lg text-white/80 mb-stack-lg max-w-2xl text-shadow">A comprehensive look at the recent strategic acquisitions enhancing tactical airlift capabilities across key operational theaters.</p>
+<a href="news.html#news-grid" class="font-label-caps text-label-caps text-white px-8 py-4 rounded hover:bg-saffron-accent hover:text-black transition-colors border-saffron-accent border backdrop-blur-sm bg-white/5 inline-block">
+                        READ FULL REPORT
+                    </a>
+</div>
+</div>
+</section>
+<!-- Topics Ribbon -->
+<section class="py-stack-lg border-y border-surface-variant bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-gutter flex flex-wrap gap-stack-md justify-center md:justify-start items-center">
+<span class="font-label-caps text-label-caps text-legal-gray mr-stack-sm hidden md:block">FILTER BY CATEGORY:</span>
+<button class="font-label-caps text-label-caps px-4 py-2 border border-surface-variant text-on-surface hover:border-saffron-accent hover:text-saffron-accent transition-colors rounded">Acquisitions</button>
+<button class="font-label-caps text-label-caps px-4 py-2 border border-surface-variant text-on-surface hover:border-saffron-accent hover:text-saffron-accent transition-colors rounded">Exercises</button>
+<button class="font-label-caps text-label-caps px-4 py-2 border border-surface-variant text-on-surface hover:border-saffron-accent hover:text-saffron-accent transition-colors rounded">Indigenous Tech</button>
+<button class="font-label-caps text-label-caps px-4 py-2 border border-surface-variant text-on-surface hover:border-saffron-accent hover:text-saffron-accent transition-colors rounded">Global Partnerships</button>
+</div>
+</section>
+<!-- News Grid Section -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-lg">
+<!-- News Card 1 -->
+<a href="tejas.html" class="group cursor-pointer relative bg-surface-container rounded-lg overflow-hidden border border-surface-variant hover:border-saffron-accent/50 transition-all duration-300 transform hover:scale-[1.02] block">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, high-resolution photograph of a Tejas Light Combat Aircraft in flight over a rugged mountainous terrain. The jet is captured in sharp focus against a dark, dramatic sky, emphasizing its aerodynamic design and engineering precision. The lighting is moody, reflecting a sophisticated aerospace documentation style consistent with a premium defense news archive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsKTP7nSrHaK2uwgdOa-X6FgPvGi5b8XiEBEY96TusXHnLQc3NHi4HILzYyEpaRbJBOvJ1rtaVo1DZXyUA385NR2DtKLp-WQGobBoCxxDTcGWReq-NcPuObbKliylklNSxxJjGMUYCq8XmgzfPa3Wju7hhgNeD5XTz_OtbZup7X4JQGZnwA8N35Iz94-G2oCzVno1XDv-ZIB4uhy9TgMG81OQ_umUGBzAAmgzPJpVIY29oc_Cu6Gb7DA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-80"></div>
+<span class="absolute bottom-stack-sm left-stack-sm font-label-caps text-label-caps text-saffron-accent bg-black/50 px-2 py-1 rounded backdrop-blur-sm border border-saffron-accent/20">News Brief</span>
+</div>
+<div class="p-stack-md">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm group-hover:text-saffron-accent transition-colors line-clamp-2">LCA Tejas Mark 1A Completes High-Altitude Trials</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-stack-md line-clamp-3">Successful validation of weapons and avionics systems in extreme cold weather environments, marking a critical phase before squadron induction.</p>
+<div class="font-label-caps text-[10px] text-legal-gray flex items-center tracking-widest uppercase border-t border-surface-variant pt-stack-sm">
+<span class="material-symbols-outlined text-[14px] mr-1">description</span>
+                            Source: ADA Technical Bulletin
+                        </div>
+</div>
+</a>
+<!-- News Card 2 -->
+<a href="tarang-shakti.html" class="group cursor-pointer relative bg-surface-container rounded-lg overflow-hidden border border-surface-variant hover:border-saffron-accent/50 transition-all duration-300 transform hover:scale-[1.02] block">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A striking image of a multinational aerial refueling exercise featuring a Sukhoi Su-30MKI connecting with an IL-78 tanker. The shot is framed from a nearby escort aircraft, capturing the intricate alignment over a vast, dark ocean. The scene is lit by harsh, technical sunlight, conveying operational precision and international cooperation in a high-contrast aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR-J3NTQuC30MmHyuZZ_5siOrWuWuvUK8dkZjZ80-t6poaHswj1-4yTZ4YxXNDKJALVKo3vwc8pT0JyDOKD1Ockj-dY2gnhKTi4rZrtBjQjmfDr6sUPqfo6_0t1RooAm44nMjCu3oi-wmYMcyApyTN0q0uVfwovndV_53wF8Ahte9QI6xsNoy-NO1XUDF-CBIxeXum9eab5uY6gqw0V_0MLkRogeafOUDZZsljUuMiejsxxQ4lzXuinw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-80"></div>
+<span class="absolute bottom-stack-sm left-stack-sm font-label-caps text-label-caps text-saffron-accent bg-black/50 px-2 py-1 rounded backdrop-blur-sm border border-saffron-accent/20">News Brief</span>
+</div>
+<div class="p-stack-md">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm group-hover:text-saffron-accent transition-colors line-clamp-2">Exercise Tarang Shakti: Strategic Reach Demonstrated</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-stack-md line-clamp-3">Extended endurance operations validated through complex multi-lateral aerial refueling maneuvers across the Indian Ocean Region.</p>
+<div class="font-label-caps text-[10px] text-legal-gray flex items-center tracking-widest uppercase border-t border-surface-variant pt-stack-sm">
+<span class="material-symbols-outlined text-[14px] mr-1">description</span>
+                            Source: Joint Ops Command
+                        </div>
+</div>
+</a>
+<!-- News Card 3 -->
+<a href="uttam-aesa.html" class="group cursor-pointer relative bg-surface-container rounded-lg overflow-hidden border border-surface-variant hover:border-saffron-accent/50 transition-all duration-300 transform hover:scale-[1.02] block">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A detailed, close-up photograph of a newly installed advanced radar array inside a dimly lit avionics bay. The intricate wiring and metallic textures are highlighted by cool blue and amber LED indicators, creating a cyberpunk yet deeply realistic technical atmosphere. The dark background emphasizes the cutting-edge indigenous defense technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRl68UEuAlgw2UpaufzXEniaCctsCOeR-Y2uCht_25qyEp-hhXvytB_rjzM6RVzEcsRoRl-3uHbGRORREhjBkaQE7y275rbG0MbupXm4xpXQb8_dOrg9qhnpCIrTMA9xFZxScYszfUbij53uHwsn5V1uV58YZdZ5B5_7u5z5Ky_Y2xJoi-XUMfafcxzEI7sCCvj0RfgqJ1ajfztwDgXKsrXHdXucXE0T5j14au1oAjleCnBsxGiHGlTg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-80"></div>
+<span class="absolute bottom-stack-sm left-stack-sm font-label-caps text-label-caps text-saffron-accent bg-black/50 px-2 py-1 rounded backdrop-blur-sm border border-saffron-accent/20">News Brief</span>
+</div>
+<div class="p-stack-md">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm group-hover:text-saffron-accent transition-colors line-clamp-2">Uttam AESA Radar Integration Enters Final Phase</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-stack-md line-clamp-3">Indigenous Active Electronically Scanned Array radar demonstrates superior tracking capabilities against multiple simultaneous targets.</p>
+<div class="font-label-caps text-[10px] text-legal-gray flex items-center tracking-widest uppercase border-t border-surface-variant pt-stack-sm">
+<span class="material-symbols-outlined text-[14px] mr-1">description</span>
+                            Source: DRDO Press Release
+                        </div>
+</div>
+</a>
+</div>
+<div id="news-grid" class="mt-stack-lg flex justify-center">
+<a href="archives.html" class="font-label-caps text-label-caps text-on-surface px-8 py-3 border border-surface-variant rounded hover:border-saffron-accent hover:text-saffron-accent transition-colors inline-block">
+                    VIEW ALL ARCHIVES
+                    </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full relative mt-section-gap border-t border-surface-variant bg-surface-container-lowest">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg py-16 px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col space-y-stack-md">
+<div class="font-headline-md text-headline-md text-on-surface opacity-80">
+                    IAF MUSEUM
+                </div>
+<p class="font-label-caps text-[10px] tracking-widest text-saffron-accent border border-saffron-accent/30 p-4 rounded bg-saffron-accent/5">
+                    © 2024 IAF INDEPENDENT FAN PORTAL. THIS IS AN INDEPENDENT FAN/INFORMATION SITE AND IS NOT AFFILIATED WITH THE INDIAN AIR FORCE OR GOVERNMENT OF INDIA.
+                </p>
+</div>
+<div class="flex flex-col md:items-end justify-center space-y-stack-sm">
+<a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors duration-200" href="archives.html">Archives</a>
+<a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors duration-200" href="about.html">About</a>
+<a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors duration-200" href="sources.html">Sources</a>
+<a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors duration-200" href="legal-disclaimer.html">Legal Disclaimer</a>
+<a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors duration-200" href="privacy-policy.html">Privacy Policy</a>
+</div>
+</div>
+</footer>
+<script src="global.js"></script>
+</body></html>

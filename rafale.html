@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style="background:#121414;color:#e2e2e2"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dassault Rafale - IAF Museum Explorer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Cormorant+Garamond:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#8f4e00",
+                        "surface": "#121414",
+                        "surface-tint": "#ffb77a",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "night-sky": "#0B1221",
+                        "surface-bright": "#37393a",
+                        "tertiary-container": "#b3b1b1",
+                        "deep-charcoal": "#121212",
+                        "outline-variant": "#554336",
+                        "surface-dim": "#121414",
+                        "on-primary-container": "#693800",
+                        "surface-container-lowest": "#0c0f0f",
+                        "surface-container-highest": "#333535",
+                        "legal-gray": "#888888",
+                        "glass-white": "rgba(255, 255, 255, 0.15)",
+                        "primary-container": "#ff9933",
+                        "on-primary": "#4c2700",
+                        "inverse-surface": "#e2e2e2",
+                        "error-container": "#93000a",
+                        "surface-variant": "#333535",
+                        "secondary": "#c0c6db",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e2e2e2",
+                        "surface-container": "#1e2020",
+                        "surface-container-low": "#1a1c1c",
+                        "tertiary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#2f3131",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "primary-fixed": "#ffdcc2",
+                        "on-secondary-container": "#b2b8cd",
+                        "on-surface-variant": "#dbc2b0",
+                        "on-surface": "#e2e2e2",
+                        "secondary-container": "#42495a",
+                        "secondary-fixed": "#dce2f8",
+                        "on-tertiary-container": "#454444",
+                        "saffron-accent": "#FF9933",
+                        "primary-fixed-dim": "#ffb77a",
+                        "background": "#121414",
+                        "on-primary-fixed-variant": "#6d3a00",
+                        "tertiary": "#cfcccc",
+                        "on-tertiary": "#313030",
+                        "on-secondary-fixed": "#151b2b",
+                        "on-secondary": "#293041",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "surface-container-high": "#282a2b",
+                        "on-secondary-fixed-variant": "#404758",
+                        "on-primary-fixed": "#2e1500",
+                        "primary": "#ffc08d",
+                        "outline": "#a38d7c",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "stack-sm": "0.5rem",
+                        "stack-md": "1.5rem",
+                        "gutter": "2rem",
+                        "section-gap": "8rem",
+                        "stack-lg": "3rem",
+                        "hero-padding": "10vh"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-hero": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "display-hero-mobile": ["Plus Jakarta Sans"],
+                        "editorial-italic": ["Cormorant Garamond"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-hero": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "display-hero-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "editorial-italic": ["32px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .museum-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .museum-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased font-body-sm selection:bg-saffron-accent selection:text-surface overflow-x-hidden bg-background text-on-background">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 shadow-2xl border-b border-white/10 bg-glass-white backdrop-blur-md">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<a href="index.html" class="font-display-hero-mobile text-display-hero-mobile font-extrabold tracking-tighter text-saffron-accent hover:opacity-90 transition-opacity">
+                IAF MUSEUM
+            </a>
+<div class="hidden md:flex space-x-8">
+<a class="font-label-caps text-label-caps text-saffron-accent border-b-2 border-saffron-accent pb-1" href="index.html#fleet">Aircraft</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-saffron-accent transition-colors duration-300" href="history.html">History</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-saffron-accent transition-colors duration-300" href="careers.html">Careers</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-saffron-accent transition-colors duration-300" href="news.html">News</a>
+</div>
+<div class="flex items-center space-x-4">
+<a href="careers.html" class="hidden md:block bg-saffron-accent text-surface px-6 py-2 rounded-full font-label-caps text-label-caps hover:brightness-110 transition-all hover:scale-[1.02] active:scale-95 duration-100 text-center flex items-center justify-center">
+                    Join Portal
+                </a>
+<button class="md:hidden text-saffron-accent">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-screen w-full flex items-center justify-start overflow-hidden pt-20">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60" data-alt="A cinematic, high-contrast photograph of a Dassault Rafale fighter jet soaring through deep, dark storm clouds. The lighting is dramatic, highlighting the sleek metallic fuselage against the night sky aesthetic. Saffron accents from the afterburners provide a stark contrast in the dark digital museum style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCgGEG8jfo4BbqW-M1pC-bDqXTrqfGiiwHCCwaIsa943g1nm6a3Jj5BkX0SLMOqqZ0jmFO6xE5znuyDVzSoUUeddcyH7jbqLnYf2Ys89_2HqXlQXmxw1Ho4FEWwKnbcsg6BYl4K94v0YZXBUxVB5PWXGFu5MqzI6Z1b7MHf6MlMmyx6DNkuzIYR-xqXMNLcPVVFrc7vSs0T_JvB_ZJ7aaWy5KgUacd4HSd7h3Q7B24_8E92VjHwZD0_g"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 px-gutter w-full max-w-container-max mx-auto pt-hero-padding museum-reveal">
+<div class="max-w-2xl">
+<span class="font-label-caps text-label-caps text-saffron-accent tracking-widest block mb-4">01 / MULTIROLE FIGHTER</span>
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-background mb-6">Dassault<br/>Rafale</h1>
+<p class="font-editorial-italic text-editorial-italic text-secondary mb-8">The Omni-role Enforcer. A cornerstone of modern Indian aerospace dominance.</p>
+<div class="flex flex-wrap gap-4">
+<a href="rafale.html#specs" class="bg-saffron-accent text-surface px-8 py-4 rounded-full font-label-caps text-label-caps hover:brightness-110 transition-all inline-block">Explore Specs</a>
+<a href="archives.html" class="glass-panel text-on-surface px-8 py-4 rounded-full font-label-caps text-label-caps hover:bg-white/10 transition-all border border-white/20 inline-block">View Archive</a>
+</div>
+</div>
+</div>
+</header>
+<!-- Technical Specs Bento -->
+<section id="specs" class="py-section-gap px-gutter max-w-container-max mx-auto">
+<div class="mb-16 museum-reveal">
+<span class="font-label-caps text-label-caps text-saffron-accent tracking-widest block mb-2">02 / CAPABILITIES</span>
+<h2 class="font-headline-lg text-headline-lg">Technical Specifications</h2>
+<p class="font-label-caps text-[10px] text-legal-gray tracking-widest mt-2">SOURCE: DASSAULT AVIATION PUBLIC DATASHEET / PIB PRESS RELEASE / MoD ACQUISITION RECORDS</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md">
+<!-- Spec Card 1 -->
+<div class="glass-panel p-8 rounded-xl museum-reveal group hover:border-saffron-accent/50 transition-colors">
+<span class="material-symbols-outlined text-4xl text-saffron-accent mb-4">speed</span>
+<h3 class="font-headline-md text-headline-md mb-2">Mach 1.8</h3>
+<p class="font-body-sm text-body-sm text-secondary">Maximum speed at high altitude, powered by twin Snecma M88-2 turbofans.</p>
+</div>
+<!-- Spec Card 2 -->
+<div class="glass-panel p-8 rounded-xl museum-reveal group hover:border-saffron-accent/50 transition-colors" style="transition-delay: 100ms;">
+<span class="material-symbols-outlined text-4xl text-saffron-accent mb-4">flight_takeoff</span>
+<h3 class="font-headline-md text-headline-md mb-2">3,700 km</h3>
+<p class="font-body-sm text-body-sm text-secondary">Ferry range with external drop tanks, ensuring deep strike capabilities.</p>
+</div>
+<!-- Spec Card 3 -->
+<div class="glass-panel p-8 rounded-xl museum-reveal group hover:border-saffron-accent/50 transition-colors" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-4xl text-saffron-accent mb-4">radar</span>
+<h3 class="font-headline-md text-headline-md mb-2">AESA Radar</h3>
+<p class="font-body-sm text-body-sm text-secondary">RBE2 active electronically scanned array for superior situational awareness.</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full relative mt-section-gap bg-surface-container-lowest border-t border-surface-variant">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg py-16 px-gutter max-w-container-max mx-auto">
+<div>
+<div class="font-headline-md text-headline-md text-on-surface opacity-80 mb-6">
+                    IAF MUSEUM
+                </div>
+<p class="font-body-sm text-body-sm text-legal-gray max-w-md">
+                    Dedicated to preserving the history and technological heritage of Indian military aviation through digital curation.
+                </p>
+</div>
+<div class="flex flex-col md:items-end justify-between">
+<div class="flex space-x-6 mb-8 md:mb-0">
+<a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors duration-200" href="archives.html">Archives</a>
+<a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors duration-200" href="about.html">About</a>
+<a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors duration-200" href="sources.html">Sources</a>
+<a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors duration-200" href="legal-disclaimer.html">Legal</a>
+<a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors duration-200" href="privacy-policy.html">Privacy</a>
+</div>
+<div class="font-label-caps text-[10px] tracking-widest text-saffron-accent mt-auto pt-8 border-t border-surface-variant/50 w-full md:text-right">
+                    © 2024 IAF INDEPENDENT FAN PORTAL. THIS IS AN INDEPENDENT FAN/INFORMATION SITE AND IS NOT AFFILIATED WITH THE INDIAN AIR FORCE OR GOVERNMENT OF INDIA.
+                </div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.museum-reveal').forEach(el => observer.observe(el));
+            
+            // Trigger immediately for elements in viewport on load
+            setTimeout(() => {
+                document.querySelectorAll('.museum-reveal').forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if(rect.top < window.innerHeight) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+        });
+    </script>
+<script src="global.js"></script>
+</body></html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style="background:#121414;color:#e2e2e2"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vayu Gaurav: Visual Archives</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#e2e2e2",
+                      "on-secondary-container": "#b2b8cd",
+                      "secondary-fixed": "#dce2f8",
+                      "surface-container-highest": "#333535",
+                      "on-error": "#690005",
+                      "tertiary-container": "#b3b1b1",
+                      "on-tertiary-fixed-variant": "#474646",
+                      "inverse-on-surface": "#2f3131",
+                      "background": "#121414",
+                      "outline": "#a38d7c",
+                      "primary-fixed": "#ffdcc2",
+                      "tertiary-fixed": "#e5e2e1",
+                      "primary-fixed-dim": "#ffb77a",
+                      "surface-container": "#1e2020",
+                      "saffron-accent": "#FF9933",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "on-primary-container": "#693800",
+                      "surface-variant": "#333535",
+                      "night-sky": "#0B1221",
+                      "inverse-primary": "#8f4e00",
+                      "surface-container-lowest": "#0c0f0f",
+                      "error": "#ffb4ab",
+                      "on-secondary": "#293041",
+                      "surface-container-high": "#282a2b",
+                      "legal-gray": "#888888",
+                      "secondary-fixed-dim": "#c0c6db",
+                      "on-primary-fixed": "#2e1500",
+                      "surface": "#121414",
+                      "on-primary-fixed-variant": "#6d3a00",
+                      "surface-bright": "#37393a",
+                      "tertiary": "#cfcccc",
+                      "on-error-container": "#ffdad6",
+                      "outline-variant": "#554336",
+                      "surface-dim": "#121414",
+                      "on-surface": "#e2e2e2",
+                      "secondary-container": "#42495a",
+                      "secondary": "#c0c6db",
+                      "primary": "#ffc08d",
+                      "on-tertiary-container": "#454444",
+                      "on-tertiary": "#313030",
+                      "glass-white": "rgba(255, 255, 255, 0.15)",
+                      "on-secondary-fixed-variant": "#404758",
+                      "on-background": "#e2e2e2",
+                      "deep-charcoal": "#121212",
+                      "error-container": "#93000a",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "primary-container": "#ff9933",
+                      "on-primary": "#4c2700",
+                      "on-surface-variant": "#dbc2b0",
+                      "surface-container-low": "#1a1c1c",
+                      "surface-tint": "#ffb77a",
+                      "on-secondary-fixed": "#151b2b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "section-gap": "8rem",
+                      "stack-md": "1.5rem",
+                      "gutter": "2rem",
+                      "stack-sm": "0.5rem",
+                      "stack-lg": "3rem",
+                      "hero-padding": "10vh",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "display-hero-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "editorial-italic": [
+                              "Cormorant Garamond"
+                      ],
+                      "display-hero": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-caps": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "display-hero-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "editorial-italic": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-hero": [
+                              "72px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.7",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden selection:bg-saffron-accent selection:text-background">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-glass-white backdrop-blur-xl shadow-2xl">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<a class="font-display-hero-mobile text-display-hero-mobile font-extrabold tracking-tighter text-saffron-accent flex items-center gap-2 hover:opacity-90 transition-opacity" href="index.html">
+                IAF MUSEUM
+            </a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-on-surface hover:text-saffron-accent hover:backdrop-brightness-125 hover:scale-[1.02] transition-all duration-300" href="index.html#fleet">Aircraft</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-saffron-accent hover:backdrop-brightness-125 hover:scale-[1.02] transition-all duration-300" href="history.html">History</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-saffron-accent hover:backdrop-brightness-125 hover:scale-[1.02] transition-all duration-300" href="careers.html">Careers</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-saffron-accent hover:backdrop-brightness-125 hover:scale-[1.02] transition-all duration-300" href="news.html">News</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="careers.html" class="hidden md:block bg-saffron-accent text-background font-label-caps text-label-caps px-6 py-3 rounded hover:bg-primary-container transition-colors text-center flex items-center justify-center">
+                    Join Portal
+                </a>
+</div>
+</div>
+</nav>
+<!-- Immersive Hero -->
+<header class="relative w-full h-[100vh] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background z-10"></div>
+<div class="bg-cover bg-center w-full h-full object-cover" data-alt="A cinematic, ultra-high-resolution photograph of an Indian Air Force Su-30MKI fighter jet soaring through deep storm clouds. The lighting is dramatic, highlighting the sleek contours of the aircraft against the dark, moody sky. The overall aesthetic is dark and premium, aligning with a digital museum exhibit, featuring deep charcoal tones and subtle, intense engine glow." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXSobd249IzjWd9VRriBVMhlPBUz6BvmcKdhRs8ZJV5fAIIIWGTMtn7QYGI9y_1LbK-yizoUVKsnnRquYIIFmgkdDvRvC3dL3X327DcubhuiZRJerBt41RfOJSOeqP_pqUe4KpMJtNsRBjKxwijlF5yD6M2QZ02mYedj9aD4yTDUTkt46to0HuRE2cfGehM5r6RWq2A7gwzMUZIWhv7OO3sLsweumYkLhJ7RYW9Y8ypvgGuck3Alxnsg')"></div>
+</div>
+<div class="relative z-20 text-center px-gutter max-w-3xl mx-auto mt-20">
+<h2 class="font-label-caps text-label-caps text-saffron-accent mb-4 tracking-[0.2em]">Vayu Gaurav: Visual Archives</h2>
+<h1 class="font-display-hero text-display-hero md:text-display-hero text-on-surface mb-6 drop-shadow-2xl">The Art of Flight</h1>
+<p class="font-editorial-italic text-editorial-italic text-surface-tint/80 max-w-xl mx-auto">
+                A curated exploration of aerial supremacy, heritage, and the precision of the Indian Air Force through the lens of history.
+            </p>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center animate-bounce">
+<span class="font-label-caps text-label-caps text-legal-gray mb-2">Explore Archives</span>
+<span class="material-symbols-outlined text-saffron-accent">arrow_downward</span>
+</div>
+</header>
+<!-- Filter Bar -->
+<section class="sticky top-20 z-40 bg-surface-container/90 backdrop-blur-md border-y border-surface-variant py-4 px-gutter">
+<div class="max-w-container-max mx-auto flex flex-wrap justify-center gap-4 md:gap-8">
+<button data-filter="all" class="font-label-caps text-label-caps px-4 py-2 rounded-full bg-saffron-accent/10 border border-saffron-accent text-saffron-accent transition-all hover:bg-saffron-accent hover:text-background">All Archives</button>
+<button data-filter="aircraft" class="font-label-caps text-label-caps px-4 py-2 rounded-full bg-transparent border border-surface-variant text-on-surface transition-all hover:border-saffron-accent hover:text-saffron-accent">Aircraft</button>
+<button data-filter="operations" class="font-label-caps text-label-caps px-4 py-2 rounded-full bg-transparent border border-surface-variant text-on-surface transition-all hover:border-saffron-accent hover:text-saffron-accent">Operations</button>
+<button data-filter="heritage" class="font-label-caps text-label-caps px-4 py-2 rounded-full bg-transparent border border-surface-variant text-on-surface transition-all hover:border-saffron-accent hover:text-saffron-accent">Heritage</button>
+<button data-filter="aero-india" class="font-label-caps text-label-caps px-4 py-2 rounded-full bg-transparent border border-surface-variant text-on-surface transition-all hover:border-saffron-accent hover:text-saffron-accent">Aero India</button>
+</div>
+</section>
+<!-- Masonry Gallery -->
+<main class="py-section-gap px-gutter max-w-container-max mx-auto min-h-screen">
+<div class="masonry-grid">
+<!-- Item 1 -->
+<div data-category="aircraft" class="masonry-item relative group overflow-hidden rounded-lg bg-surface-container-high cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A striking high-contrast photo of an IAF Rafale fighter jet performing a sharp maneuver during a sunset. The sky is painted with deep oranges and dark purples, emphasizing the aircraft's delta-wing profile. The image is rich in detail, showcasing the technical precision of modern aerospace engineering within a cinematic, museum-quality setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBUC7oLmMOnr4ymujcTYa8tNprPzg8NpsA11_6s6Vh2xxzImlUSjK1QyZ-xFX7ax-oN1QOlaAYNK6jS42Xc9_tk0r29zZGE_gJNAlXU_q3PdTbYxO5x8Iq6JytWIXDkjF_QHKCw4KcDE0N74kPoA6YGEWY11QCQNFbUka9LTuRohc10XMAXeZJNp1h92OnsJ4tGED4UfT4p_xjiLnq9_J7bURmsYD2bb4D43Ik2nPcQzXnsbOSeGUNlQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal via-deep-charcoal/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="font-label-caps text-label-caps text-saffron-accent mb-2">Aircraft / Modern Fleet</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Dassault Rafale</h3>
+<p class="font-body-sm text-body-sm text-tertiary line-clamp-2">Omnirole fighter executing a high-G maneuver during twilight operations, demonstrating unmatched agility and precision.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div data-category="heritage" class="masonry-item relative group overflow-hidden rounded-lg bg-surface-container-high cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A vintage black and white photograph of an early Indian Air Force Spitfire parked on a dusty tarmac. The image is restored to high clarity, showing the mechanical details of the propellor and fuselage. The lighting highlights the historical texture and metallic sheen of the aircraft, evoking a sense of solemn heritage and early aviation courage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9SpxTORIomYO7m0j-VTObw8wQIo6QUWA_6Mosht7jyHZNWDJtPL4cVNOqSRT3TUcs66u2CbjcfVmlojb7_D_QvKOmQaBiccSAEy61GLyVbLHEBwBRNHDusqGLxi_Id6fDqMxhbS3XnoZoQkKvCaCZbxRhyYZSsaONyosDeDh7CmncA7W0qzJerA5DAkVcU5wRQ1cfeZH3TSjAtgZPQ9Ysl5U79uertdKnY5Ej29tEu1R0pQVFvgn2Bw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal via-deep-charcoal/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="font-label-caps text-label-caps text-saffron-accent mb-2">Heritage / Origins</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Supermarine Spitfire</h3>
+<p class="font-body-sm text-body-sm text-tertiary line-clamp-2">A foundational pillar of early IAF fighter squadrons, standing resilient on the tarmac during the mid-20th century.</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div data-category="aircraft" class="masonry-item relative group overflow-hidden rounded-lg bg-surface-container-high cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A dynamic shot of a formation of HAL Tejas light combat aircraft flying over a rugged, mountainous terrain. The landscape below is dark and textured, contrasting with the sleek, grey fuselages of the jets catching the mid-day sun. The scene conveys indigenous technological triumph in a vast, atmospheric environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1xdNcZjkUM1ljmhuzlQCdCAb1H6MwMYoW_LMiOY_RlDdlPCKAI3BHqO4bdYtmKvJXD6XAWAvAluNPZvF0KLMs0sHoMqRobsvNO8TqdDsJnjZsOTFRnw4JcwtTSa9q4um3MkAY0oR0lacWn254FtRmEeWbon4YmWo1rP1Q-mYtLcv31GZVCUZX0rceGbaty-tkZeJmBhNoWa4mZGPhrKs4GiCxYCIuFzKKPyiQNHpRN96ZgoeLmKIt5g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal via-deep-charcoal/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="font-label-caps text-label-caps text-saffron-accent mb-2">Aircraft / Indigenous</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">LCA Tejas</h3>
+<p class="font-body-sm text-body-sm text-tertiary line-clamp-2">Delta-wing light combat aircraft formation patrolling high-altitude terrain, showcasing indigenous aerospace capability.</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div data-category="operations" class="masonry-item relative group overflow-hidden rounded-lg bg-surface-container-high cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up, dramatic shot of an IAF pilot in full flight gear inside the cockpit of a fighter jet. The lighting is low and intense, with the green glow of instrument panels reflecting off the pilot's visor. The image captures the focus, technological immersion, and human element within the dark, complex environment of modern military aviation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4r3l0ltcLCgzEAeYO8uOTHhc5g9bzRzHm3s-20ub6a7xlN5Kgee5Oy5JuW0-p55THTQ7QLjiufHGvvnnaR-YP5xFcTQFSUlsSI6TIOuxW8MyPujY6lo6BDe-dOp4-sj-FUJwCNpoRFixAmnG9ubKVXN1GNKsmmRn2Kzi9B4SgfEiLjzPXws_tPY-sbsTV-8ICAJ78KSMV3v-_S-pJ1b9BkaLfULb9hlmx6KQjjQS1XNN9zB2FunlMDQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal via-deep-charcoal/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="font-label-caps text-label-caps text-saffron-accent mb-2">Operations / Human Element</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Cockpit Immersion</h3>
+<p class="font-body-sm text-body-sm text-tertiary line-clamp-2">The intersection of human focus and advanced avionics, bathed in the glow of tactical displays during a night sortie.</p>
+</div>
+</div>
+<!-- Item 5 -->
+<div data-category="operations" class="masonry-item relative group overflow-hidden rounded-lg bg-surface-container-high cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A panoramic photograph of an IAF C-17 Globemaster heavy transport aircraft landing on an austere runway in a remote region. Dust kicks up heavily behind the massive landing gear. The sky is overcast and moody, highlighting the sheer scale and logistical power of the aircraft in challenging environments." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkVssammxNWhjKvQXYJ7eB5EaBeWqQBtQ8px70dAH5yrVWQCDPRGZxvYDOTpqwc7h88t5pxUtvCCoX6r0DUePIzkjB6cdjWe53y9ek4AGqQA-mIi6Ih5ksDcmZ3stCDp9r2U_5goY5DeBnaecst2cMnHHjzDPbGaN2CT97byOOA_RB10HEYa3fuIPF7-17-XkouJ8Lu_eJTNq2uqHNsH5LK3RoOi0KNiqIDbdkGk7wwQ7WloInicLUhg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal via-deep-charcoal/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="font-label-caps text-label-caps text-saffron-accent mb-2">Operations / Transport</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">C-17 Globemaster III</h3>
+<p class="font-body-sm text-body-sm text-tertiary line-clamp-2">Strategic airlift capability demonstrated as the heavy transport touches down on a remote, unpaved airstrip.</p>
+</div>
+</div>
+<!-- Item 6 -->
+<div data-category="aero-india" class="masonry-item relative group overflow-hidden rounded-lg bg-surface-container-high cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A vibrant, energetic photo from Aero India showing the Surya Kiran Aerobatic Team executing a perfectly synchronized loop maneuver. Trails of smoke trace elegant arcs against a clear blue sky, contrasting sharply with the deep red and white of the aircraft. The image captures the precision and spectacle of formation flying." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_7BxFoSizYtvFTHohyPeRq30BeLAKx1RXvRqJWezmlPNQIzjr9t0JXrYX8zZkb6YOaelRlHAwVmFHjFXZSU9Ro7SbF_8_FI-sqWkKAh9lnuXveHIXjHq29SsNInkENC6LksfftY7KURbIB3irPdsVWKaiSKeKK0YMoNnt1HiS5vYx90LKqRYmCjC8HknOe1hkvpnjJ02_auKRekYcUtLtwIWlFtEm6VRDQVcrJ4_gnFe3OfRGRY45bg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal via-deep-charcoal/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="font-label-caps text-label-caps text-saffron-accent mb-2">Aero India / Display</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Surya Kiran Formation</h3>
+<p class="font-body-sm text-body-sm text-tertiary line-clamp-2">The IAF's premier aerobatic team painting the sky with precision maneuvers, demonstrating extreme airmanship and coordination.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Video Section -->
+<section class="bg-surface-container-lowest py-section-gap">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-surface-variant pb-6">
+<div>
+<span class="font-label-caps text-label-caps text-saffron-accent tracking-widest uppercase block mb-2">Cinematic Archives</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Featured Footage</h2>
+</div>
+<a class="font-label-caps text-label-caps text-saffron-accent hover:text-primary transition-colors flex items-center gap-2 mt-4 md:mt-0" href="archives.html">
+                    View All Videos <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Video 1 -->
+<div data-video-src="WhatsApp Video 2026-08-15 at 2.53.15 PM.mp4" class="group relative rounded-xl overflow-hidden cursor-pointer bg-surface-container-high aspect-video border border-white/5 shadow-2xl">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="A video thumbnail showing a dramatic head-on view of an Apache attack helicopter hovering low over a desert landscape. Heat distortion blurs the background slightly. The lighting is harsh and tactical, fitting the aggressive and advanced nature of the machine." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCihbAiuhJfD_ME1_IvO7RxP1UC3J0ckwSGHck2aZ0d1q9njWJsGjRgk4IEKxfm-wAuvqwBRq-VmO_tPMububPR35auxf6X9h4cewVYAXina8kCWqTWY1aVHtDK5ZvrX3eQcbX_KzUCSqRkWqmTw3Is6Ch0EJLZ4quaGrXx0rjp-1Y3sly4IqwXmm7v4gHX6SlJ4Wfwbn4iSuMrYQWwAm2f8varL35XNMtKjcJzTN0iCc9cJqjO90j_Lw')"></div>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-20 h-20 rounded-full bg-glass-white backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:scale-110 group-hover:border-saffron-accent transition-all duration-300">
+<span class="material-symbols-outlined text-on-surface text-4xl ml-2" data-weight="fill">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black via-black/80 to-transparent">
+<span class="bg-saffron-accent text-background font-label-caps text-[10px] px-2 py-1 rounded inline-block mb-3">04:12</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Desert Strike: Apache in Action</h3>
+<p class="font-body-sm text-body-sm text-tertiary">Live fire exercise footage from the western sector.</p>
+</div>
+</div>
+<!-- Video 2 -->
+<div data-video-src="WhatsApp Video 2026-08-15 at 2.53.16 PM.mp4" class="group relative rounded-xl overflow-hidden cursor-pointer bg-surface-container-high aspect-video border border-white/5 shadow-2xl">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="A video thumbnail depicting a breathtaking air-to-air shot of two Sukhoi Su-30MKI fighters flying in close formation against a backdrop of the snow-capped Himalayas. The contrast between the dark grey jets and the pristine white peaks creates a stunning visual narrative of border defense and high-altitude dominance." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCWjOMZV0_-YoXQ6PHbQO4w46bzDkpxZm7mKrIZ2anyPFjOQuZaq9hpyTxsViEb6PdAKGUbuIaeuYOd4mCT8QQgfdBYo6KsAq_kwwuYb__8u4nyXpkIYiLxlvvnMFsm2VQDJpsa0fHhjpsD_HOUyQgZn89990TGraphi_JRjWuFfsr7EoSeG-hkQwimYZvfTPDn09Gt5Vav041yBVOi1_PGTJuXEWuGAjqqZq0qgp6OYoVGRY9sk-xrbw')"></div>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-20 h-20 rounded-full bg-glass-white backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:scale-110 group-hover:border-saffron-accent transition-all duration-300">
+<span class="material-symbols-outlined text-on-surface text-4xl ml-2" data-weight="fill">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black via-black/80 to-transparent">
+<span class="bg-surface-variant text-on-surface font-label-caps text-[10px] px-2 py-1 rounded inline-block mb-3 border border-white/10">12:45 / DOCUMENTARY</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Guardians of the Peaks</h3>
+<p class="font-body-sm text-body-sm text-tertiary">High altitude operations and air superiority in the northern sector.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full relative mt-section-gap border-t border-surface-variant">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg py-16 px-gutter max-w-container-max mx-auto flat no shadows">
+<div>
+<a class="font-headline-md text-headline-md text-on-surface opacity-80 block mb-6" href="index.html">
+                    IAF MUSEUM
+                </a>
+<p class="font-body-sm text-body-sm text-tertiary max-w-md mb-8">
+                    Preserving the legacy, technology, and valor of the Indian Air Force through digital curation and visual storytelling.
+                </p>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center text-on-surface hover:text-saffron-accent hover:border-saffron-accent transition-colors duration-200" onclick="if(navigator.share){navigator.share({title:'Vayu Gaurav Portal', url: window.location.href})}else{alert('Share Link Copied!'); navigator.clipboard.writeText(window.location.href);}" aria-label="Share page">
+<span class="material-symbols-outlined text-sm">share</span>
+</button>
+<a class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center text-on-surface hover:text-saffron-accent hover:border-saffron-accent transition-colors duration-200" href="mailto:contact@vayugaurav.gov.in?subject=Vayu Gaurav Inquiry" aria-label="Email admin">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col md:items-end justify-between">
+<nav class="flex flex-wrap gap-x-8 gap-y-4 mb-12 md:mb-0">
+<a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors Link fade transition-opacity duration-200" href="archives.html">Archives</a>
+<a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors Link fade transition-opacity duration-200" href="about.html">About</a>
+<a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors Link fade transition-opacity duration-200" href="sources.html">Sources</a>
+<a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors Link fade transition-opacity duration-200" href="legal-disclaimer.html">Legal Disclaimer</a>
+<a class="font-body-sm text-body-sm text-legal-gray hover:text-on-surface transition-colors Link fade transition-opacity duration-200" href="privacy-policy.html">Privacy Policy</a>
+</nav>
+<div class="bg-error-container/10 border border-error/20 p-4 rounded-lg md:max-w-md">
+<p class="font-label-caps text-[10px] tracking-widest text-saffron-accent leading-relaxed">
+                        © 2024 IAF INDEPENDENT FAN PORTAL. THIS IS AN INDEPENDENT FAN/INFORMATION SITE AND IS NOT AFFILIATED WITH THE INDIAN AIR FORCE OR GOVERNMENT OF INDIA.
+                    </p>
+</div>
+</div>
+</div>
+</footer>
+<script src="global.js"></script>
+</body></html>

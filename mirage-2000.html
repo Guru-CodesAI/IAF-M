@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style="background:#121414;color:#e2e2e2"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mirage 2000 'Vajra' - IAF Independent Fan Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Cormorant+Garamond:ital,wght@1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#8f4e00",
+                        "surface": "#121414",
+                        "surface-tint": "#ffb77a",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "night-sky": "#0B1221",
+                        "surface-bright": "#37393a",
+                        "tertiary-container": "#b3b1b1",
+                        "deep-charcoal": "#121212",
+                        "outline-variant": "#554336",
+                        "surface-dim": "#121414",
+                        "on-primary-container": "#693800",
+                        "surface-container-lowest": "#0c0f0f",
+                        "surface-container-highest": "#333535",
+                        "legal-gray": "#888888",
+                        "glass-white": "rgba(255, 255, 255, 0.15)",
+                        "primary-container": "#ff9933",
+                        "on-primary": "#4c2700",
+                        "inverse-surface": "#e2e2e2",
+                        "error-container": "#93000a",
+                        "surface-variant": "#333535",
+                        "secondary": "#c0c6db",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e2e2e2",
+                        "surface-container": "#1e2020",
+                        "surface-container-low": "#1a1c1c",
+                        "tertiary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#2f3131",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "primary-fixed": "#ffdcc2",
+                        "on-secondary-container": "#b2b8cd",
+                        "on-surface-variant": "#dbc2b0",
+                        "on-surface": "#e2e2e2",
+                        "secondary-container": "#42495a",
+                        "secondary-fixed": "#dce2f8",
+                        "on-tertiary-container": "#454444",
+                        "saffron-accent": "#FF9933",
+                        "primary-fixed-dim": "#ffb77a",
+                        "background": "#121414",
+                        "on-primary-fixed-variant": "#6d3a00",
+                        "tertiary": "#cfcccc",
+                        "on-tertiary": "#313030",
+                        "on-secondary-fixed": "#151b2b",
+                        "on-secondary": "#293041",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "surface-container-high": "#282a2b",
+                        "on-secondary-fixed-variant": "#404758",
+                        "on-primary-fixed": "#2e1500",
+                        "primary": "#ffc08d",
+                        "outline": "#a38d7c",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "stack-sm": "0.5rem",
+                        "stack-md": "1.5rem",
+                        "gutter": "2rem",
+                        "section-gap": "8rem",
+                        "stack-lg": "3rem",
+                        "hero-padding": "10vh"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-hero": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "display-hero-mobile": ["Plus Jakarta Sans"],
+                        "editorial-italic": ["Cormorant Garamond"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-hero": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "display-hero-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "editorial-italic": ["32px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden selection:bg-saffron-accent selection:text-deep-charcoal">
+<!-- Top Navigation Anchor (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-glass-white backdrop-blur-md shadow-2xl transition-all hover:backdrop-brightness-125">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<!-- Brand -->
+<a href="index.html" class="font-display-hero-mobile text-display-hero-mobile font-extrabold tracking-tighter text-saffron-accent hover:opacity-90 transition-opacity">
+                IAF MUSEUM
+            </a>
+<!-- Navigation Links -->
+<div class="hidden md:flex space-x-8 items-center font-label-caps text-label-caps">
+<!-- Active Item (Aircraft matches intent) -->
+<a class="text-saffron-accent border-b-2 border-saffron-accent pb-1 active:scale-95 transition-all" href="index.html#fleet">Aircraft</a>
+<!-- Inactive Items -->
+<a class="text-on-surface hover:text-saffron-accent transition-colors duration-300" href="history.html">History</a>
+<a class="text-on-surface hover:text-saffron-accent transition-colors duration-300" href="careers.html">Careers</a>
+<a class="text-on-surface hover:text-saffron-accent transition-colors duration-300" href="news.html">News</a>
+</div>
+<!-- Trailing Action -->
+<div class="flex items-center gap-4">
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<a href="careers.html" class="font-label-caps text-label-caps bg-saffron-accent text-on-primary px-6 py-2 rounded-DEFAULT hover:scale-[1.02] transition-all text-center flex items-center justify-center">
+                Join Portal
+            </a>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main>
+<!-- Hero Section (Cinematic Reveal) -->
+<section class="relative h-screen w-full flex items-end pb-hero-padding">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0 bg-cover bg-center" data-alt="A dramatic, high-contrast cinematic shot of a Dassault Mirage 2000 fighter jet soaring through deep, dark twilight skies. The aircraft is rendered in hyper-realistic detail, with atmospheric lighting catching the leading edges of its delta wings. The background features a subtle gradient of deep night-sky blue fading into pitch black, embodying a sophisticated, authoritative digital museum aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDjLIsYokkTtPdzb4xO2lJjXAE2U0dsxwVTWy4GDMyk49-YqqMUuYwyHSVphhaH6n-ZDR8fYyDfX065dcQB9c_2eDEkKZisO8PxOlNnHD6CFQAJV5UsFXLQDBV1Yr6vS06u7J_UxmRSUddFB6IxU7djZNbhv0UOIKHnkFjuwpmxYWfX-FgkuMIJ82A6YAgcYcI47YF1XpC-DJ-b-_Lyqp6SbPK6OtDCjFcNLi3qKFme3VnAQgC7tU23Fg');"></div>
+<!-- Atmospheric Gradient Overlay -->
+<div class="absolute inset-0 z-10 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
+<div class="relative z-20 w-full max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-end gap-stack-lg">
+<div class="max-w-2xl">
+<p class="font-label-caps text-label-caps text-saffron-accent mb-stack-sm tracking-widest uppercase">Dassault / Multi-Role Fighter</p>
+<h1 class="font-display-hero text-display-hero md:text-[96px] text-on-surface mb-stack-sm">MIRAGE 2000</h1>
+<p class="font-editorial-italic text-editorial-italic text-inverse-surface opacity-90 max-w-xl">
+                        Known in the IAF as 'Vajra' (Thunderbolt), the Mirage 2000 has been the tip of the spear in high-altitude conflict, defining Indian air superiority since 1985.
+                    </p>
+</div>
+<div class="flex flex-col gap-4 bg-glass-white backdrop-blur-xl border border-white/10 p-6 rounded-lg shadow-2xl hidden md:flex">
+<div class="flex justify-between gap-12 border-b border-surface-variant pb-2">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim">TOP SPEED</span>
+<span class="font-headline-md text-headline-md text-saffron-accent">Mach 2.2</span>
+</div>
+<div class="flex justify-between gap-12 border-b border-surface-variant pb-2">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim">SERVICE CEILING</span>
+<span class="font-headline-md text-headline-md text-saffron-accent">55,770 ft</span>
+</div>
+<div class="flex justify-between gap-12">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim">COMBAT RANGE</span>
+<span class="font-headline-md text-headline-md text-saffron-accent">1,550 km</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Explorer Section -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Spec Text -->
+<div class="lg:col-span-5 space-y-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Precision &amp; Power</h2>
+<p class="font-label-caps text-[10px] text-legal-gray tracking-widest mb-4">SOURCE: DASSAULT AVIATION / IAF OFFICIAL HISTORY / PIB ARCHIVES</p>
+<p class="font-body-lg text-body-lg text-secondary">
+                        The Mirage 2000 features a tailless delta wing configuration, optimizing it for high-speed intercepts and exceptional low-level maneuverability. Its SNECMA M53-P2 turbofan engine produces over 95 kN of thrust with afterburner, allowing rapid climbing capabilities crucial in mountainous theaters.
+                    </p>
+<ul class="space-y-4 font-body-sm text-body-sm text-secondary">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-saffron-accent">check_circle</span>
+                            Fly-by-wire flight control system for relaxed stability.
+                        </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-saffron-accent">check_circle</span>
+                            Thales RDY radar capable of multi-target tracking.
+                        </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-saffron-accent">check_circle</span>
+                            Integrated electronic warfare suite.
+                        </li>
+</ul>
+</div>
+<!-- Spec Image / Bento Layout -->
+<div class="lg:col-span-7 grid grid-cols-2 gap-4">
+<div class="col-span-2 h-64 bg-surface-container rounded-xl overflow-hidden relative group">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" data-alt="A highly detailed, technical blueprint-style 3D wireframe render of a Mirage 2000 delta wing structure, illuminated in stark white lines against a deep charcoal background. The image has a clean, precise, aerospace engineering aesthetic suitable for a high-end digital museum." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk8S7KnWHtyafCUnqK0q2UNDJDx4GDCyc3taf7QaJ7bigyZkkRosB7vso1RvF5ZQ8JrkSml2YEFOWv5v6KY8iiA4ID5tiIN1l1X2ASu8Zj7Ep9_VFS9GRq2eRNC5bZS_6w2w0lRmJ0Q5JRinZqMdoYZU9rT-D6Zj6ZnzsG13Ov4Mfw4Ash9cJysamne8MJhYoTMSs0d_OHovZv2fqVlT24yMV4TGcHG7zZ7jw_uPz0N6S4R2l8xHY50A"/>
+<div class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-background w-full">
+<span class="font-label-caps text-label-caps text-saffron-accent">DELTA WING AERODYNAMICS</span>
+</div>
+</div>
+<div class="h-48 bg-surface-container rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover opacity-70" data-alt="A close-up, dramatic macro photograph of the SNECMA M53-P2 jet engine exhaust nozzle of a Mirage 2000. Deep shadows contrast with subtle metallic highlights, conveying raw mechanical power in a sophisticated, dark-themed presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPlOxyB76la5aQtXmyFEHpquPDxFS3760Kr_cQD0W-6mtr6bJhTINOYQIfsK4oUxk2tlwnAkKDPEofc1axdc0pEfv5LFU0XSVJGLyXJTnua5EDCm6WnENamfW2D0lSaN92za2db_Lm-yVVomTcndFpSHEJ-pOTlrn1Br2cmFleIyK4WuBPFNIcRb3Uy2p1fYBk64itNmc2w7RP506RW9O0WRG4R-tvJhfUPExOTiMhA2udVfxa9qAkoQ"/>
+</div>
+<div class="h-48 bg-surface-container rounded-xl overflow-hidden relative flex items-center justify-center p-6 text-center">
+<div>
+<span class="material-symbols-outlined text-[48px] text-surface-variant mb-2">rocket_launch</span>
+<p class="font-label-caps text-label-caps text-on-surface">WEAPONS PAYLOAD</p>
+<p class="font-body-sm text-body-sm text-secondary mt-2">Up to 6,300 kg on 9 hardpoints.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Historical Service (Kargil) -->
+<section class="py-section-gap bg-surface-container-low border-y border-surface-variant">
+<div class="max-w-container-max mx-auto px-gutter text-center mb-stack-lg">
+<span class="font-label-caps text-label-caps text-saffron-accent tracking-widest block mb-2">OPERATION SAFED SAGAR</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">The Kargil Crucible</h2>
+</div>
+<div class="max-w-4xl mx-auto px-gutter">
+<blockquote class="font-editorial-italic text-editorial-italic text-center text-inverse-surface mb-stack-lg border-l-4 border-saffron-accent pl-6 text-left max-w-2xl mx-auto">
+                    "The Mirage 2000s changed the course of the conflict. Operating at extreme altitudes where performance margins are razor-thin, they delivered precision-guided munitions with devastating effect."
+                </blockquote>
+<p class="font-body-lg text-body-lg text-secondary columns-1 md:columns-2 gap-8 text-justify">
+                    During the 1999 Kargil War, the Mirage 2000 proved invaluable. Stripped of conventional constraints, IAF squadrons adapted the aircraft for high-altitude bombing missions in the Himalayas. Dropping Laser-Guided Bombs (LGBs) on fortified bunkers at Tiger Hill and Muntho Dhalo from altitudes exceeding 30,000 feet, the 'Vajra' demonstrated unparalleled accuracy. Its advanced navigation and targeting pods allowed for day and night operations in treacherous terrain, significantly hastening the end of the conflict and solidifying its legendary status within the Indian Air Force.
+                </p>
+</div>
+</section>
+</main>
+<!-- Footer Anchor (Shared Component) -->
+<footer class="w-full relative mt-section-gap border-t border-surface-variant bg-surface-container-lowest">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg py-16 px-gutter max-w-container-max mx-auto">
+<!-- Left Column: Branding & Copyright -->
+<div class="space-y-stack-sm">
+<div class="font-headline-md text-headline-md text-on-surface opacity-80 mb-4">
+                    IAF MUSEUM
+                </div>
+<p class="font-body-sm text-body-sm text-saffron-accent max-w-md">
+                    Preserving the legacy of aerospace excellence and strategic dominance.
+                </p>
+<p class="font-label-caps text-[10px] tracking-widest text-legal-gray mt-8">
+                    © 2024 IAF INDEPENDENT FAN PORTAL. THIS IS AN INDEPENDENT FAN/INFORMATION SITE AND IS NOT AFFILIATED WITH THE INDIAN AIR FORCE OR GOVERNMENT OF INDIA.
+                </p>
+</div>
+<!-- Right Column: Links -->
+<div class="flex flex-col md:items-end justify-start space-y-4 font-body-sm text-body-sm">
+<a class="text-legal-gray hover:text-on-surface transition-colors hover:opacity-100 duration-200" href="archives.html">Archives</a>
+<a class="text-legal-gray hover:text-on-surface transition-colors hover:opacity-100 duration-200" href="about.html">About</a>
+<a class="text-legal-gray hover:text-on-surface transition-colors hover:opacity-100 duration-200" href="sources.html">Sources</a>
+<a class="text-legal-gray hover:text-on-surface transition-colors hover:opacity-100 duration-200" href="legal-disclaimer.html">Legal Disclaimer</a>
+<a class="text-legal-gray hover:text-on-surface transition-colors hover:opacity-100 duration-200" href="privacy-policy.html">Privacy Policy</a>
+</div>
+</div>
+</footer>
+<script src="global.js"></script>
+</body></html>

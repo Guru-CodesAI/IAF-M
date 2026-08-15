@@ -1,0 +1,25 @@
+# 3D Models (large binary files)
+*.glb
+*.gltf
+
+# Videos
+*.mp4
+*.mov
+*.avi
+
+# PDFs and docs
+*.pdf
+*.docx
+*.doc
+
+# Markdown docs (internal)
+deep-research-report.md
+DEVELOPMENT_REPORT.md
+premium-web-design-skill.md
+
+# Stitch project folder
+stitch_project_genesis/
+
+# OS files
+.DS_Store
+Thumbs.db

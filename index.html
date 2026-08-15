@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style="background:#121414;color:#e2e2e2"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Independent Aviation Portal - Vayu Gaurav</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Cormorant+Garamond:ital,wght@1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#454444",
+                        "secondary": "#c0c6db",
+                        "on-primary-fixed-variant": "#6d3a00",
+                        "tertiary-container": "#b3b1b1",
+                        "surface-container-high": "#282a2b",
+                        "glass-white": "rgba(255, 255, 255, 0.15)",
+                        "surface-variant": "#333535",
+                        "night-sky": "#0B1221",
+                        "outline": "#a38d7c",
+                        "on-surface": "#e2e2e2",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#1a1c1c",
+                        "surface-dim": "#121414",
+                        "on-secondary-fixed-variant": "#404758",
+                        "inverse-surface": "#e2e2e2",
+                        "background": "#121414",
+                        "inverse-primary": "#8f4e00",
+                        "on-surface-variant": "#dbc2b0",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "tertiary": "#cfcccc",
+                        "surface-container": "#1e2020",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "saffron-accent": "#FF9933",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "on-primary-fixed": "#2e1500",
+                        "surface-bright": "#37393a",
+                        "inverse-on-surface": "#2f3131",
+                        "on-secondary-fixed": "#151b2b",
+                        "secondary-fixed": "#dce2f8",
+                        "on-tertiary": "#313030",
+                        "error": "#ffb4ab",
+                        "legal-gray": "#888888",
+                        "surface-container-highest": "#333535",
+                        "on-primary-container": "#693800",
+                        "primary-container": "#ff9933",
+                        "surface-container-lowest": "#0c0f0f",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-secondary-container": "#b2b8cd",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-secondary": "#293041",
+                        "on-primary": "#4c2700",
+                        "surface": "#121414",
+                        "primary-fixed": "#ffdcc2",
+                        "surface-tint": "#ffb77a",
+                        "primary-fixed-dim": "#ffb77a",
+                        "on-background": "#e2e2e2",
+                        "outline-variant": "#554336",
+                        "on-error": "#690005",
+                        "secondary-container": "#42495a",
+                        "primary": "#ffc08d",
+                        "error-container": "#93000a",
+                        "deep-charcoal": "#121212"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "2rem",
+                        "container-max": "1440px",
+                        "section-gap": "8rem",
+                        "stack-lg": "3rem",
+                        "stack-sm": "0.5rem",
+                        "hero-padding": "10vh",
+                        "stack-md": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "display-hero-mobile": ["Plus Jakarta Sans"],
+                        "display-hero": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "editorial-italic": ["Cormorant Garamond"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "display-hero-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-hero": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "editorial-italic": ["32px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 30s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+        .video-rotated-horizontal {
+            position: absolute !important;
+            width: 56.25% !important;
+            height: 177.78% !important;
+            transform: rotate(-90deg) !important;
+            transform-origin: center !important;
+            object-fit: cover !important;
+        }
+        /* Full-screen horizontal video background */
+        .hero-video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* Swap dimensions: viewport width becomes height and vice versa after rotation */
+            min-width: 100vh;
+            min-height: 100vw;
+            width: max(100%, 177.78vh); /* 16:9 ratio */
+            height: max(100%, 56.25vw);
+            transform: translate(-50%, -50%) rotate(-90deg);
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+            /* Hint browser to render at high quality */
+            image-rendering: high-quality;
+        }
+        /* Hero text contrast */
+        .hero-title {
+            text-shadow: 0 2px 40px rgba(0,0,0,0.9), 0 0 80px rgba(0,0,0,0.8);
+        }
+        .hero-subtitle {
+            text-shadow: 0 1px 20px rgba(0,0,0,0.9);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-glass-white backdrop-blur-xl border-b border-white/10 shadow-2xl">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<a href="index.html" class="flex items-center gap-4 hover:opacity-90 transition-opacity">
+<img alt="IAF MUSEUM Logo" class="h-10 w-10 object-contain rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa2B1Lhd7dWMNL6A8rwCYM10Xfx13sS0ix4_1dqeGHWhTXqbCYPUNiegx5FmEJtYGxceqSv-hhqLUMm456EJCrkQhLalnQwFT38ooE0wtxColBltWG3klh_IIaHuCPhGOADMZwusac-WsQf74KpaxKf1W5Osc3wQf1FSw5xtFIYzonDEldrRwd_4EymmOL1qJ65jRDrxuW0Jbq_6J_vBwBAo5szBZv6apMpXV9mte8uhT-6TgcrWfrvw"/>
+<span class="font-display-hero-mobile text-display-hero-mobile font-extrabold tracking-tighter text-saffron-accent hidden md:block">IAF MUSEUM</span>
+</a>
+<ul class="hidden md:flex gap-8 items-center font-label-caps text-label-caps">
+<li><a class="text-on-surface hover:text-saffron-accent transition-colors duration-300" href="#fleet">Aircraft</a></li>
+<li><a class="text-on-surface hover:text-saffron-accent transition-colors duration-300" href="history.html">History</a></li>
+<li><a class="text-on-surface hover:text-saffron-accent transition-colors duration-300" href="careers.html">Careers</a></li>
+<li><a class="text-on-surface hover:text-saffron-accent transition-colors duration-300" href="news.html">News</a></li>
+</ul>
+<div class="flex items-center gap-4">
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<a href="careers.html" class="hidden md:block bg-saffron-accent text-deep-charcoal font-label-caps text-label-caps px-6 py-3 rounded hover:brightness-110 transition-all hover:scale-[1.02] text-center">Join Portal</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-[100vh] w-full flex items-center overflow-hidden">
+<!-- Background Video with Dark Overlay -->
+<div class="absolute inset-0 w-full h-full overflow-hidden bg-black">
+<video autoplay muted loop playsinline class="hero-video-bg" preload="metadata">
+<source src="WhatsApp Video 2026-08-15 at 2.53.16 PM.mp4" type="video/mp4"/>
+</video>
+<!-- Multi-layer dark overlay for maximum text legibility -->
+<div class="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 to-black/30 z-[1]"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 z-[2]"></div>
+</div>
+<!-- Content -->
+<div class="relative z-10 w-full max-w-container-max mx-auto px-gutter pt-32 pb-24 flex flex-col justify-center min-h-screen">
+<div class="max-w-3xl text-left">
+<!-- Eyebrow label -->
+<span class="font-label-caps text-label-caps text-saffron-accent mb-4 block tracking-widest">VAYU GAURAV DIGITAL MUSEUM</span>
+<h1 class="hero-title font-display-hero text-[52px] md:text-[72px] lg:text-[88px] text-white font-extrabold tracking-tighter mb-6 leading-[1.05]">
+                HONORING <br/><span class="text-saffron-accent">THE SKIES</span>
+</h1>
+<p class="hero-subtitle font-body-lg text-[18px] md:text-[20px] text-white/90 mb-10 max-w-xl leading-relaxed">
+                An independent portal dedicated to the aircraft, history, and warriors of Indian military aviation.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 items-start">
+<a href="#fleet" class="bg-saffron-accent text-deep-charcoal font-label-caps text-label-caps px-8 py-4 rounded hover:brightness-110 transition-all hover:scale-[1.02] text-center flex items-center justify-center gap-2 shadow-lg shadow-saffron-accent/30">
+<span class="material-symbols-outlined text-[18px]">flight</span>
+Explore the Fleet
+</a>
+<a href="history.html" class="bg-white/10 backdrop-blur-md border border-white/30 text-white font-label-caps text-label-caps px-8 py-4 rounded hover:bg-white/20 transition-all hover:scale-[1.02] text-center flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+Learn the History
+</a>
+</div>
+<!-- Stats bar -->
+<div class="mt-12 flex gap-8 border-t border-white/10 pt-8">
+<div>
+<div class="font-display-hero-mobile text-[28px] font-extrabold text-saffron-accent">90+</div>
+<div class="font-label-caps text-[10px] text-white/60 tracking-widest">YEARS OF SERVICE</div>
+</div>
+<div>
+<div class="font-display-hero-mobile text-[28px] font-extrabold text-saffron-accent">1,800+</div>
+<div class="font-label-caps text-[10px] text-white/60 tracking-widest">AIRCRAFT OPERATED</div>
+</div>
+<div>
+<div class="font-display-hero-mobile text-[28px] font-extrabold text-saffron-accent">4th</div>
+<div class="font-label-caps text-[10px] text-white/60 tracking-widest">LARGEST AIR FORCE</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-8 left-0 w-full text-center px-4 z-10">
+<p class="font-label-caps text-[10px] tracking-widest text-white/50 uppercase">
+                UNOFFICIAL FAN SITE — NOT AFFILIATED WITH THE IAF OR MoD.
+            </p>
+</div>
+</section>
+<!-- Aviation Brief Marquee -->
+<div class="w-full bg-surface-container-low border-y border-surface-variant py-4 overflow-hidden mt-section-gap">
+<div class="marquee font-label-caps text-label-caps text-secondary/60">
+<span>SU-30MKI FLEET UPGRADE ANNOUNCED   //   NEW TEJAS MK1A SQUADRON INDUCTED   //   HISTORIC RAFALE DEPLOYMENT   //   C-17 GLOBEMASTER HUMANITARIAN MISSION   //   MIRAGE 2000 LEGACY CONTINUES</span>
+</div>
+</div>
+<!-- Machines of Power Section -->
+<section id="fleet" class="max-w-container-max mx-auto px-gutter py-section-gap w-full">
+<div class="mb-12 scroll-reveal">
+<span class="font-label-caps text-label-caps text-saffron-accent mb-2 block">01 / FLEET</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Machines of Power</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-md">
+<!-- Aircraft Card 1 -->
+<a href="su-30mki.html" class="group block relative rounded-xl overflow-hidden aspect-[3/4] scroll-reveal bg-surface-container-high border border-surface-variant transition-transform duration-300 hover:scale-[1.02]">
+<div role="img" aria-label="Su-30MKI fighter jet on a dark tarmac at dusk, cinematic lighting highlighting the sleek lines and metallic texture" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC23AQxQH_jWFYjhWp4y7sK_EHtal4t6OMTmXas1p8pLuB7PZUUporZmu1YSUQx8DjgtV4Smyt590SlihPPlGneob8kdCKjlU1g9mPFr36_qJCsriZ2QZha6NGJZ1LiI-nGabkQWK7qet_nJxwFvFjWk05LQQqBtgRMbWoG5Lcs0B6dfvQxPrXT8LqVHXZkwS6lPwopkDM1Zsh1dNYDjKHhfiLpb9wgd4ALh7gfGqk3jnKS2FQiqOZ75g')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Su-30MKI</h3>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 flex flex-col gap-2">
+<div class="flex justify-between border-b border-white/10 pb-1">
+<span class="font-label-caps text-label-caps text-secondary">Role</span>
+<span class="font-body-sm text-body-sm text-on-surface">Air Superiority</span>
+</div>
+<div class="flex justify-between border-b border-white/10 pb-1">
+<span class="font-label-caps text-label-caps text-secondary">Speed</span>
+<span class="font-body-sm text-body-sm text-on-surface">Mach 2.0</span>
+</div>
+</div>
+</div>
+</a>
+<!-- Aircraft Card 2 -->
+<a href="rafale.html" class="group block relative rounded-xl overflow-hidden aspect-[3/4] scroll-reveal bg-surface-container-high border border-surface-variant transition-transform duration-300 hover:scale-[1.02]" style="transition-delay: 100ms;">
+<div role="img" aria-label="Rafale fighter jet emerging from a hangar, cinematic lighting emphasising the delta wing design" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuABNkhLtMIash_kN31vAJhq5qmxU_oR8DAU5YbqFZLWkh7vm33ihJIcD5GoTftDX-K1U4XLqP-UKI6hQttYwY5ZXG9GtYWPdm_XdY87axj_mv1KZAckJhK2j8_PEMvWirOu-fxXMUNeNJEYKXG4-ZIifL0R5f4_vrOQ2LqyBXk3TwE49LzLlHbgB2mu3TTMcoTzLyGO93VIYAogU6Iz8GeNTKzUi9XM6gknMMzNQ32ABBjzbST5NM9VrA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Rafale</h3>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 flex flex-col gap-2">
+<div class="flex justify-between border-b border-white/10 pb-1">
+<span class="font-label-caps text-label-caps text-secondary">Role</span>
+<span class="font-body-sm text-body-sm text-on-surface">Omnirole</span>
+</div>
+<div class="flex justify-between border-b border-white/10 pb-1">
+<span class="font-label-caps text-label-caps text-secondary">Speed</span>
+<span class="font-body-sm text-body-sm text-on-surface">Mach 1.8</span>
+</div>
+</div>
+</div>
+</a>
+<!-- Aircraft Card 3 -->
+<a href="tejas.html" class="group block relative rounded-xl overflow-hidden aspect-[3/4] scroll-reveal bg-surface-container-high border border-surface-variant transition-transform duration-300 hover:scale-[1.02]" style="transition-delay: 200ms;">
+<div role="img" aria-label="LCA Tejas in high-altitude flight against a dark stormy sky, silhouette with glowing exhaust" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBgwLQ90bwVnsSKjC5jOQQwNSTKole31rQWNF4mdDSQcL3Gp_SywBe_8VW8QWc0wK3fPXDsCPScF2eCpHWjv83vyewCmfIYlt8DjG60c_UegdfhmbDZfkNUbcAXQvRYLrAPMksm9XRr_RvPkRR5Ib8J4Ol4d1bNl_cNvWnqMOWvwmh70ESBITF85W7OaT48SwM3VQwVdJxyWDjILEnh73AEa7a4q0h3x9hLMxVgdzjKHGkmFIJpJfDLg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Tejas Mk1A</h3>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 flex flex-col gap-2">
+<div class="flex justify-between border-b border-white/10 pb-1">
+<span class="font-label-caps text-label-caps text-secondary">Role</span>
+<span class="font-body-sm text-body-sm text-on-surface">Light Combat</span>
+</div>
+<div class="flex justify-between border-b border-white/10 pb-1">
+<span class="font-label-caps text-label-caps text-secondary">Speed</span>
+<span class="font-body-sm text-body-sm text-on-surface">Mach 1.6</span>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</section>
+
+<!-- Interactive 3D Simulator Section -->
+<section id="simulator" class="max-w-container-max mx-auto px-gutter py-section-gap w-full">
+    <div class="mb-12 scroll-reveal">
+        <span class="font-label-caps text-label-caps text-saffron-accent mb-2 block">02 / INTERACTIVE HANGAR</span>
+        <h2 class="font-headline-lg text-headline-lg text-on-surface">3D Tactical Simulator</h2>
+        <p class="font-body-lg text-body-lg text-secondary max-w-3xl mt-4">
+            Interact with high-fidelity declassified 3D models of India's frontline interceptors. Test aerodynamic yaw/pitch controls, manipulate engine throttle telemetry, and explore weapon systems in real-time.
+        </p>
+    </div>
+
+    <!-- Simulator Layout Dashboard -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden p-6 lg:p-8 relative">
+        
+        <!-- Left: Telemetry & Controls (col-span-5) -->
+        <div class="lg:col-span-5 flex flex-col justify-between gap-6 z-10">
+            
+            <!-- Aircraft Selector -->
+            <div>
+                <span class="font-label-caps text-[10px] tracking-widest text-tertiary mb-3 block uppercase">SELECT INTERCEPTOR</span>
+                <div class="grid grid-cols-3 gap-2">
+                    <button onclick="loadAircraft('su30')" id="btn-su30" class="btn-aircraft px-3 py-3 rounded border text-center font-label-caps text-[11px] transition-all bg-saffron-accent text-deep-charcoal border-saffron-accent">
+                        SU-30MKK
+                    </button>
+                    <button onclick="loadAircraft('rafale')" id="btn-rafale" class="btn-aircraft px-3 py-3 rounded border text-center font-label-caps text-[11px] transition-all bg-transparent text-on-surface border-white/10 hover:border-white/20">
+                        RAFALE C
+                    </button>
+                    <button onclick="loadAircraft('mirage')" id="btn-mirage" class="btn-aircraft px-3 py-3 rounded border text-center font-label-caps text-[11px] transition-all bg-transparent text-on-surface border-white/10 hover:border-white/20">
+                        MIRAGE 2000
+                    </button>
+                </div>
+            </div>
+
+            <!-- Telemetry Monitor -->
+            <div class="bg-surface-dim border border-white/5 p-5 rounded-lg flex flex-col gap-4">
+                <span class="font-label-caps text-[10px] tracking-widest text-saffron-accent border-b border-white/5 pb-2 block uppercase flex justify-between">
+                    <span>Telemetry Output</span>
+                    <span class="animate-pulse text-red-500 font-bold">• ACTIVE</span>
+                </span>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <span class="font-label-caps text-[9px] text-legal-gray block uppercase">Airframe</span>
+                        <span id="tel-name" class="font-body-sm text-on-surface font-mono font-bold">Sukhoi Su-30MKK</span>
+                    </div>
+                    <div>
+                        <span class="font-label-caps text-[9px] text-legal-gray block uppercase">Estimated Weight</span>
+                        <span id="tel-weight" class="font-body-sm text-on-surface font-mono">18,400 kg</span>
+                    </div>
+                    <div>
+                        <span class="font-label-caps text-[9px] text-legal-gray block uppercase">Engine Status</span>
+                        <span id="tel-engine" class="font-body-sm text-on-surface font-mono text-green-400 font-bold">IDLE</span>
+                    </div>
+                    <div>
+                        <span class="font-label-caps text-[9px] text-legal-gray block uppercase">Simulation Load</span>
+                        <span class="font-body-sm text-on-surface font-mono text-saffron-accent">GLTF WebGL</span>
+                    </div>
+                </div>
+
+                <div class="border-t border-white/5 pt-3 mt-1">
+                    <span class="font-label-caps text-[9px] text-legal-gray block uppercase mb-1">Max Speed Telemetry</span>
+                    <div class="flex items-center gap-3">
+                        <div class="flex-grow bg-white/5 h-2 rounded overflow-hidden">
+                            <div id="tel-speed-bar" class="bg-saffron-accent h-full transition-all duration-500" style="width: 80%"></div>
+                        </div>
+                        <span id="tel-speed" class="font-body-sm text-on-surface font-mono text-[12px]">Mach 2.0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simulation Inputs -->
+            <div class="flex flex-col gap-4">
+                <!-- Throttle Control -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-label-caps text-[10px] tracking-widest text-tertiary uppercase">Thrust Throttle</span>
+                        <span id="txt-throttle" class="font-body-sm text-saffron-accent font-mono text-[12px]">0% (Idle)</span>
+                    </div>
+                    <input type="range" id="slider-throttle" min="0" max="100" value="0" class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-saffron-accent focus:outline-none"/>
+                </div>
+
+                <!-- Simulation States / Controls -->
+                <div class="grid grid-cols-2 gap-2 mt-2">
+                    <button onclick="toggleUnderglow()" id="btn-underglow" class="px-3 py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-on-surface rounded font-label-caps text-[10px] uppercase flex items-center justify-center gap-1">
+                        <span class="material-symbols-outlined text-sm">wb_iridescent</span> Saffron Glow
+                    </button>
+                    <button onclick="resetCamera()" class="px-3 py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-on-surface rounded font-label-caps text-[10px] uppercase flex items-center justify-center gap-1">
+                        <span class="material-symbols-outlined text-sm">center_focus_strong</span> Reset View
+                    </button>
+                </div>
+                
+                <!-- Flight Actions -->
+                <div class="flex flex-col gap-2">
+                    <span class="font-label-caps text-[10px] tracking-widest text-tertiary uppercase mb-1">Pre-Programmed Maneuvers</span>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button onclick="runManeuver('pitch')" class="px-3 py-2 bg-saffron-accent/10 border border-saffron-accent/30 text-saffron-accent hover:bg-saffron-accent/20 rounded font-label-caps text-[10px] uppercase flex items-center justify-center gap-1">
+                            <span class="material-symbols-outlined text-[12px]">flight_takeoff</span> Pitch Takeoff
+                        </button>
+                        <button onclick="runManeuver('roll')" class="px-3 py-2 bg-saffron-accent/10 border border-saffron-accent/30 text-saffron-accent hover:bg-saffron-accent/20 rounded font-label-caps text-[10px] uppercase flex items-center justify-center gap-1">
+                            <span class="material-symbols-outlined text-[12px]">replay</span> Barrel Roll
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="font-body-sm text-body-sm text-legal-gray/80 leading-relaxed italic">
+                *Note: Interacting with the 3D viewer directly allows full pan, orbital rotation, and focal zoom control.
+            </p>
+        </div>
+
+        <!-- Right: WebGL Viewport (col-span-7) -->
+        <div class="lg:col-span-7 relative h-[450px] lg:h-[550px] rounded-xl overflow-hidden bg-black border border-white/10 flex items-center justify-center">
+            
+            <!-- Canvas Container -->
+            <div id="webgl-canvas-container" class="absolute inset-0 w-full h-full"></div>
+
+            <!-- Simulation Screen Overlay Grid & HUD elements -->
+            <div class="absolute inset-0 pointer-events-none border border-white/5 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-transparent to-black/40">
+                <!-- Tactical Crosshair HUD -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-25">
+                    <div class="w-16 h-16 border border-saffron-accent rounded-full flex items-center justify-center">
+                        <div class="w-2 h-2 bg-saffron-accent rounded-full animate-ping"></div>
+                    </div>
+                    <div class="absolute w-32 h-[1px] bg-saffron-accent"></div>
+                    <div class="absolute h-32 w-[1px] bg-saffron-accent"></div>
+                </div>
+
+                <!-- WebGL Warning/Active HUD badge -->
+                <div class="absolute top-4 left-4 bg-black/70 border border-white/10 px-3 py-1.5 rounded flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-saffron-accent animate-pulse"></span>
+                    <span class="font-label-caps text-[9px] tracking-widest text-on-surface uppercase">WebGL Viewport 3.0</span>
+                </div>
+
+                <!-- Simulation Radar Sweep Display in corner -->
+                <div class="absolute bottom-4 right-4 bg-black/80 border border-white/10 p-3 rounded flex flex-col gap-2 items-center justify-center w-24 h-24 overflow-hidden">
+                    <div class="relative w-12 h-12 rounded-full border border-green-500/30 overflow-hidden flex items-center justify-center">
+                        <!-- Sweep Line -->
+                        <div class="absolute top-0 left-0 w-full h-full border-r border-green-500 origin-center animate-[spin_3s_linear_infinite]" style="border-right-width: 2px;"></div>
+                        <!-- Radar dots -->
+                        <div class="absolute w-1 h-1 bg-green-500 rounded-full top-2 left-6 animate-pulse"></div>
+                        <div class="absolute w-1.5 h-1.5 bg-green-400 rounded-full top-8 left-3 animate-ping"></div>
+                    </div>
+                    <span class="font-label-caps text-[8px] tracking-widest text-green-500 uppercase">SYS_RADAR</span>
+                </div>
+            </div>
+
+            <!-- Loader Screen Overlay -->
+            <div id="gltf-loader-screen" class="absolute inset-0 bg-black/95 flex flex-col items-center justify-center gap-4 z-20 transition-all duration-300">
+                <div class="relative w-16 h-16">
+                    <div class="absolute inset-0 border-4 border-white/10 rounded-full"></div>
+                    <div class="absolute inset-0 border-4 border-t-saffron-accent rounded-full animate-spin"></div>
+                </div>
+                <div class="flex flex-col items-center gap-1">
+                    <span class="font-label-caps text-[11px] tracking-widest text-saffron-accent uppercase font-bold">Decrypting Model Assets</span>
+                    <span id="gltf-loader-progress" class="font-body-sm text-[12px] text-secondary font-mono">0% Completed</span>
+                </div>
+                <!-- Loading Progress Bar -->
+                <div class="w-48 bg-white/10 h-1 rounded overflow-hidden">
+                    <div id="gltf-loader-bar" class="bg-saffron-accent h-full w-0 transition-all duration-200"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Hangar Simulator Logic -->
+<script>
+    // Config models
+    const models = {
+        su30: {
+            path: 'sukhoi_su-30mkk.glb',
+            name: 'Sukhoi Su-30MKK',
+            weight: '18,400 kg',
+            speed: 'Mach 2.0',
+            exhaustOffset: { x: 0, y: 0.12, z: -2.3 },
+            rotationOffset: { x: 0, y: Math.PI, z: 0 }
+        },
+        rafale: {
+            path: 'dassault_rafale_c_f3.glb',
+            name: 'Dassault Rafale C',
+            weight: '9,900 kg',
+            speed: 'Mach 1.8',
+            exhaustOffset: { x: 0, y: 0.05, z: -1.95 },
+            rotationOffset: { x: 0, y: Math.PI, z: 0 }
+        },
+        mirage: {
+            path: 'dassault_mirage_2000d_rmv.glb',
+            name: 'Dassault Mirage 2000',
+            weight: '7,500 kg',
+            speed: 'Mach 2.2',
+            exhaustOffset: { x: 0, y: 0.06, z: -2.25 },
+            rotationOffset: { x: 0, y: Math.PI, z: 0 }
+        }
+    };
+
+    let scene, camera, renderer, controls, loader;
+    let modelGroup, currentModel = null;
+    let exhaustGlow, glowMat, exhaustLight, underglowLight;
+    let throttleValue = 0;
+    let isModelLoaded = false;
+    let underglowActive = false;
+    let container;
+
+    // Maneuver tracking
+    let maneuverActive = false;
+    let maneuverType = '';
+    let maneuverProgress = 0;
+
+    // Web Audio Synthesizer
+    let audioCtx = null;
+    let osc = null;
+    let gainNode = null;
+
+    function initAudio() {
+        if (!audioCtx) {
+            try {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                osc = audioCtx.createOscillator();
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(35, audioCtx.currentTime); // very low rumble
+
+                let filter = audioCtx.createBiquadFilter();
+                filter.type = 'lowpass';
+                filter.frequency.setValueAtTime(100, audioCtx.currentTime);
+
+                gainNode = audioCtx.createGain();
+                gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+
+                osc.connect(filter);
+                filter.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+                osc.start();
+            } catch(e) {
+                console.warn('Web Audio API not supported or blocked:', e);
+            }
+        }
+        if (audioCtx && audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+    }
+
+    function setEngineSound(throttle) {
+        if (gainNode && osc && audioCtx) {
+            // Modulate frequency and volume based on throttle value
+            osc.frequency.setValueAtTime(35 + (throttle / 100) * 45, audioCtx.currentTime);
+            // Low volume multiplier (0.01 to 0.15) to keep it pleasant
+            gainNode.gain.linearRampToValueAtTime((throttle > 0 ? 0.01 : 0) + (throttle / 100) * 0.14, audioCtx.currentTime + 0.1);
+        }
+    }
+
+    function initSimulator() {
+        container = document.getElementById('webgl-canvas-container');
+        if (!container) return;
+
+        // Initialize Scene
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x121414);
+        scene.fog = new THREE.FogExp2(0x121414, 0.015);
+
+        // Initialize Camera
+        camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+        camera.position.set(0, 4, 10);
+
+        // Initialize Renderer
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.outputEncoding = THREE.sRGBEncoding;
+        container.appendChild(renderer.domElement);
+
+        // Initialize Controls
+        controls = typeof THREE.OrbitControls !== 'undefined' ? new THREE.OrbitControls(camera, renderer.domElement) : new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+        controls.maxPolarAngle = Math.PI / 2 - 0.05; // prevent going under floor
+        controls.minDistance = 3;
+        controls.maxDistance = 25;
+        controls.target.set(0, 0.5, 0);
+
+        // Add Grid Helper
+        const gridHelper = new THREE.GridHelper(30, 30, 0xFF9933, 0x333333);
+        gridHelper.position.y = -2;
+        scene.add(gridHelper);
+
+        // Add Lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.55);
+        scene.add(ambientLight);
+
+        const dirLight1 = new THREE.DirectionalLight(0xffffff, 0.95);
+        dirLight1.position.set(10, 20, 10);
+        scene.add(dirLight1);
+
+        const dirLight2 = new THREE.DirectionalLight(0xffffff, 0.35);
+        dirLight2.position.set(-10, 10, -10);
+        scene.add(dirLight2);
+
+        // Exhaust Nozzle Point Light
+        exhaustLight = new THREE.PointLight(0xff5500, 0, 8);
+        scene.add(exhaustLight);
+
+        // Underglow Point Light
+        underglowLight = new THREE.PointLight(0xff9933, 0, 10);
+        underglowLight.position.set(0, -1.95, 0);
+        scene.add(underglowLight);
+
+        // Build Volumetric Exhaust Plume Mesh
+        const glowGeo = new THREE.CylinderGeometry(0.08, 0.35, 2.5, 16, 1, true);
+        glowGeo.rotateX(Math.PI / 2);
+        glowGeo.translate(0, 0, -1.25); // Shift back from center
+
+        glowMat = new THREE.MeshBasicMaterial({
+            color: 0xff3a00,
+            transparent: true,
+            opacity: 0,
+            blending: THREE.AdditiveBlending,
+            side: THREE.DoubleSide
+        });
+
+        exhaustGlow = new THREE.Mesh(glowGeo, glowMat);
+        exhaustGlow.visible = false;
+
+        // Model Group
+        modelGroup = new THREE.Group();
+        scene.add(modelGroup);
+
+        // Initialize GLTF Loader
+        loader = typeof THREE.GLTFLoader !== 'undefined' ? new THREE.GLTFLoader() : new GLTFLoader();
+
+        // Load Initial Aircraft
+        loadAircraft('su30');
+
+        // Resize Listener
+        window.addEventListener('resize', onWindowResize, false);
+
+        // Start Loop
+        animate();
+    }
+
+    function onModelLoaded(gltf, info, loaderScreen) {
+        while (modelGroup.children.length > 0) modelGroup.remove(modelGroup.children[0]);
+        const modelScene = gltf.scene;
+        const box = new THREE.Box3().setFromObject(modelScene);
+        const size = box.getSize(new THREE.Vector3());
+        const scale = 5.0 / Math.max(size.x, size.y, size.z);
+        modelScene.scale.set(scale, scale, scale);
+        const center = box.getCenter(new THREE.Vector3());
+        modelScene.position.sub(center.multiplyScalar(scale));
+        modelScene.rotation.set(info.rotationOffset.x, info.rotationOffset.y, info.rotationOffset.z);
+        if (exhaustGlow) {
+            exhaustGlow.position.set(info.exhaustOffset.x, info.exhaustOffset.y, info.exhaustOffset.z);
+            modelScene.add(exhaustGlow);
+            exhaustLight.position.set(0, info.exhaustOffset.y + 0.5, info.exhaustOffset.z - 0.4);
+        }
+        modelGroup.add(modelScene);
+        modelGroup.position.set(0, 0.5, 0);
+        modelGroup.rotation.set(0, 0, 0);
+        loaderScreen.classList.add('opacity-0');
+        setTimeout(() => { loaderScreen.style.display = 'none'; }, 300);
+        isModelLoaded = true;
+    }
+
+    let activeLoadId = 0;
+    function loadAircraft(key) {
+        initAudio();
+        if (!models[key]) return;
+
+        // Increment active load identifier to prevent loader race conditions
+        activeLoadId++;
+        const currentLoadId = activeLoadId;
+
+        // Update button classes
+        document.querySelectorAll('.btn-aircraft').forEach(btn => {
+            btn.classList.remove('bg-saffron-accent', 'text-deep-charcoal', 'border-saffron-accent');
+            btn.classList.add('bg-transparent', 'text-on-surface', 'border-white/10', 'hover:border-white/20');
+        });
+        const activeBtn = document.getElementById('btn-' + key);
+        if (activeBtn) {
+            activeBtn.classList.remove('bg-transparent', 'text-on-surface', 'border-white/10', 'hover:border-white/20');
+            activeBtn.classList.add('bg-saffron-accent', 'text-deep-charcoal', 'border-saffron-accent');
+        }
+
+        const info = models[key];
+
+        // Update Stats UI
+        document.getElementById('tel-name').innerText = info.name;
+        document.getElementById('tel-weight').innerText = info.weight;
+        document.getElementById('tel-speed').innerText = info.speed;
+
+        // Update speed gauge
+        const speedVal = parseFloat(info.speed.replace('Mach ', ''));
+        const pct = Math.min(100, Math.round((speedVal / 2.2) * 100));
+        document.getElementById('tel-speed-bar').style.width = pct + '%';
+
+        // Reset inputs
+        document.getElementById('slider-throttle').value = 0;
+        document.getElementById('txt-throttle').innerText = '0% (Idle)';
+        document.getElementById('tel-engine').innerText = 'IDLE';
+        document.getElementById('tel-engine').className = 'font-body-sm font-mono text-green-400 font-bold';
+        setEngineSound(0);
+        
+        if (exhaustGlow) exhaustGlow.visible = false;
+        if (exhaustLight) exhaustLight.intensity = 0;
+
+        // Show loading screen
+        const loaderScreen = document.getElementById('gltf-loader-screen');
+        loaderScreen.style.display = 'flex';
+        loaderScreen.classList.remove('opacity-0');
+        document.getElementById('gltf-loader-progress').innerText = '0% Decrypted';
+        document.getElementById('gltf-loader-bar').style.width = '0%';
+
+        isModelLoaded = false;
+
+        // Load GLB via fetch+ArrayBuffer to work on both file:// and http://
+        const tryLoad = (loadPath) => {
+            document.getElementById('gltf-loader-progress').innerText = 'Fetching Model Data...';
+            fetch(loadPath)
+                .then(res => {
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
+                    const total = parseInt(res.headers.get('content-length') || '0');
+                    let loaded = 0;
+                    const reader = res.body.getReader();
+                    const chunks = [];
+                    const pump = () => reader.read().then(({ done, value }) => {
+                        if (currentLoadId !== activeLoadId) return;
+                        if (done) {
+                            const blob = new Blob(chunks, { type: 'model/gltf-binary' });
+                            const url = URL.createObjectURL(blob);
+                            loader.load(url, function(gltf) {
+                                URL.revokeObjectURL(url);
+                                if (currentLoadId !== activeLoadId) return;
+                                onModelLoaded(gltf, info, loaderScreen);
+                            }, undefined, function(err) {
+                                URL.revokeObjectURL(url);
+                                console.error('GLTFLoader parse error:', err);
+                                document.getElementById('gltf-loader-progress').innerText = 'Model Decryption Error';
+                            });
+                            return;
+                        }
+                        chunks.push(value);
+                        loaded += value.length;
+                        if (total > 0) {
+                            const pct = Math.round((loaded / total) * 100);
+                            document.getElementById('gltf-loader-progress').innerText = pct + '% Decrypted';
+                            document.getElementById('gltf-loader-bar').style.width = pct + '%';
+                        } else {
+                            document.getElementById('gltf-loader-progress').innerText = 'Downloading Model Data...';
+                            document.getElementById('gltf-loader-bar').style.width = '65%';
+                        }
+                        return pump();
+                    });
+                    return pump();
+                })
+                .catch(err => {
+                    if (currentLoadId !== activeLoadId) return;
+                    console.error('Fetch error:', err);
+                    // Fallback: try direct loader (works on http://)
+                    loader.load(loadPath, function(gltf) {
+                        if (currentLoadId !== activeLoadId) return;
+                        onModelLoaded(gltf, info, loaderScreen);
+                    }, function(xhr) {
+                        if (!xhr.lengthComputable) return;
+                        const pct = Math.round((xhr.loaded / xhr.total) * 100);
+                        document.getElementById('gltf-loader-progress').innerText = pct + '% Decrypted';
+                        document.getElementById('gltf-loader-bar').style.width = pct + '%';
+                    }, function(e) {
+                        console.error('GLTFLoader error:', e);
+                        document.getElementById('gltf-loader-progress').innerText = 'Model Decryption Error';
+                    });
+                });
+        };
+
+        tryLoad(info.path);
+    }
+
+    function toggleUnderglow() {
+        initAudio();
+        underglowActive = !underglowActive;
+        const btn = document.getElementById('btn-underglow');
+        if (underglowActive) {
+            underglowLight.intensity = 5;
+            btn.classList.add('bg-saffron-accent/20', 'border-saffron-accent', 'text-saffron-accent');
+        } else {
+            underglowLight.intensity = 0;
+            btn.classList.remove('bg-saffron-accent/20', 'border-saffron-accent', 'text-saffron-accent');
+        }
+    }
+
+    function resetCamera() {
+        initAudio();
+        controls.reset();
+        camera.position.set(0, 4, 10);
+        controls.target.set(0, 0.5, 0);
+    }
+
+    function runManeuver(type) {
+        initAudio();
+        if (maneuverActive || !isModelLoaded) return;
+        maneuverActive = true;
+        maneuverType = type;
+        maneuverProgress = 0;
+    }
+
+    function onWindowResize() {
+        if (camera && renderer && container) {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        }
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+
+        if (controls) controls.update();
+
+        // Slow hover rotation when idle
+        if (isModelLoaded && !maneuverActive && modelGroup) {
+            modelGroup.rotation.y += 0.003;
+            // Float up and down slightly
+            modelGroup.position.y = 0.5 + Math.sin(Date.now() * 0.0015) * 0.08;
+        }
+
+        // Maneuver calculations
+        if (maneuverActive && modelGroup) {
+            maneuverProgress += 0.008; // speed factor
+            if (maneuverProgress >= 1) {
+                maneuverActive = false;
+                modelGroup.rotation.set(0, 0, 0);
+                modelGroup.position.set(0, 0.5, 0);
+            } else {
+                if (maneuverType === 'pitch') {
+                    // Pull up nose and climb vertically, then return
+                    const angle = Math.sin(maneuverProgress * Math.PI) * 0.55;
+                    modelGroup.rotation.x = -angle; // pitch up
+                    modelGroup.position.y = 0.5 + Math.sin(maneuverProgress * Math.PI) * 2.2;
+                    modelGroup.position.z = -maneuverProgress * 3.5;
+                } else if (maneuverType === 'roll') {
+                    // Barrel roll around Z axis while oscillating horizontally
+                    modelGroup.rotation.z = maneuverProgress * Math.PI * 2;
+                    modelGroup.position.x = Math.sin(maneuverProgress * Math.PI * 2) * 1.5;
+                    modelGroup.position.y = 0.5 + Math.sin(maneuverProgress * Math.PI) * 0.4;
+                }
+            }
+        }
+
+        if (renderer && scene && camera) {
+            renderer.render(scene, camera);
+        }
+    }
+
+    // Bind slider input change events
+    document.addEventListener('DOMContentLoaded', () => {
+        const slider = document.getElementById('slider-throttle');
+        if (slider) {
+            slider.addEventListener('input', (e) => {
+                initAudio();
+                const val = parseInt(e.target.value);
+                throttleValue = val;
+
+                // Update UI text
+                document.getElementById('txt-throttle').innerText = val + '% ' + (val > 80 ? '(Afterburner)' : val > 0 ? '(Spooling)' : '(Idle)');
+                document.getElementById('tel-engine').innerText = val > 80 ? 'AFTERBURNER' : val > 0 ? 'THRUSTING' : 'IDLE';
+                document.getElementById('tel-engine').className = 'font-body-sm font-mono ' + (val > 80 ? 'text-red-500 font-bold animate-pulse' : val > 0 ? 'text-saffron-accent font-bold' : 'text-green-400 font-bold');
+
+                // Adjust Synthesizer Sound
+                setEngineSound(val);
+
+                // Modulate exhaust plume mesh dimensions & brightness
+                if (exhaustGlow && glowMat) {
+                    if (val > 0) {
+                        exhaustGlow.visible = true;
+                        exhaustGlow.scale.set(0.6 + val * 0.012, 0.6 + val * 0.012, 0.5 + val * 0.025);
+                        glowMat.opacity = 0.25 + (val / 100) * 0.75;
+                        exhaustLight.intensity = (val / 100) * 4.5;
+                    } else {
+                        exhaustGlow.visible = false;
+                        exhaustLight.intensity = 0;
+                    }
+                }
+            });
+        }
+
+        // Initialize simulation viewport
+        initSimulator();
+    });
+</script>
+
+<!-- Footer -->
+<footer class="w-full relative mt-auto bg-surface-container-lowest border-t border-surface-variant py-16">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<span class="font-headline-md text-headline-md text-on-surface opacity-80">IAF MUSEUM</span>
+<p class="font-label-caps text-[10px] tracking-widest text-saffron-accent max-w-md">
+                    © 2024 IAF INDEPENDENT FAN PORTAL. THIS IS AN INDEPENDENT FAN/INFORMATION SITE AND IS NOT AFFILIATED WITH THE INDIAN AIR FORCE OR GOVERNMENT OF INDIA.
+                </p>
+</div>
+<div class="flex flex-col md:items-end gap-2 font-body-sm text-body-sm">
+<a class="text-legal-gray hover:text-on-surface transition-colors duration-200" href="archives.html">Archives</a>
+<a class="text-legal-gray hover:text-on-surface transition-colors duration-200" href="about.html">About</a>
+<a class="text-legal-gray hover:text-on-surface transition-colors duration-200" href="sources.html">Sources</a>
+<a class="text-legal-gray hover:text-on-surface transition-colors duration-200" href="legal-disclaimer.html">Legal Disclaimer</a>
+<a class="text-legal-gray hover:text-on-surface transition-colors duration-200" href="privacy-policy.html">Privacy Policy</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll reveal animation observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    </script>
+<script src="global.js"></script>
+</body></html>

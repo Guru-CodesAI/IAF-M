@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style="background:#121414;color:#e2e2e2"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IAF MUSEUM - Su-30MKI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Cormorant+Garamond:ital,wght@1,400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            font-feature-settings: 'liga';
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#454444",
+                        "secondary": "#c0c6db",
+                        "on-primary-fixed-variant": "#6d3a00",
+                        "tertiary-container": "#b3b1b1",
+                        "surface-container-high": "#282a2b",
+                        "glass-white": "rgba(255, 255, 255, 0.15)",
+                        "surface-variant": "#333535",
+                        "night-sky": "#0B1221",
+                        "outline": "#a38d7c",
+                        "on-surface": "#e2e2e2",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#1a1c1c",
+                        "surface-dim": "#121414",
+                        "on-secondary-fixed-variant": "#404758",
+                        "inverse-surface": "#e2e2e2",
+                        "background": "#121414",
+                        "inverse-primary": "#8f4e00",
+                        "on-surface-variant": "#dbc2b0",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "tertiary": "#cfcccc",
+                        "surface-container": "#1e2020",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "saffron-accent": "#FF9933",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "on-primary-fixed": "#2e1500",
+                        "surface-bright": "#37393a",
+                        "inverse-on-surface": "#2f3131",
+                        "on-secondary-fixed": "#151b2b",
+                        "secondary-fixed": "#dce2f8",
+                        "on-tertiary": "#313030",
+                        "error": "#ffb4ab",
+                        "legal-gray": "#888888",
+                        "surface-container-highest": "#333535",
+                        "on-primary-container": "#693800",
+                        "primary-container": "#ff9933",
+                        "surface-container-lowest": "#0c0f0f",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-secondary-container": "#b2b8cd",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-secondary": "#293041",
+                        "on-primary": "#4c2700",
+                        "surface": "#121414",
+                        "primary-fixed": "#ffdcc2",
+                        "surface-tint": "#ffb77a",
+                        "primary-fixed-dim": "#ffb77a",
+                        "on-background": "#e2e2e2",
+                        "outline-variant": "#554336",
+                        "on-error": "#690005",
+                        "secondary-container": "#42495a",
+                        "primary": "#ffc08d",
+                        "error-container": "#93000a",
+                        "deep-charcoal": "#121212"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "2rem",
+                        "container-max": "1440px",
+                        "section-gap": "8rem",
+                        "stack-lg": "3rem",
+                        "stack-sm": "0.5rem",
+                        "hero-padding": "10vh",
+                        "stack-md": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "display-hero-mobile": ["Plus Jakarta Sans"],
+                        "display-hero": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "editorial-italic": ["Cormorant Garamond"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "display-hero-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-hero": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "editorial-italic": ["32px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-glass-white backdrop-blur-md shadow-2xl">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<a href="index.html" class="font-display-hero-mobile text-display-hero-mobile font-extrabold tracking-tighter text-saffron-accent hover:opacity-90 transition-opacity">
+                IAF MUSEUM
+            </a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-saffron-accent border-b-2 border-saffron-accent pb-1" href="index.html#fleet">Aircraft</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-saffron-accent transition-colors duration-300" href="history.html">History</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-saffron-accent transition-colors duration-300" href="careers.html">Careers</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-saffron-accent transition-colors duration-300" href="news.html">News</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="careers.html" class="hidden md:flex items-center gap-2 px-6 py-3 bg-saffron-accent text-on-primary-fixed font-label-caps text-label-caps rounded hover:brightness-110 transition-all text-center">
+                    Join Portal
+                </a>
+<button class="md:hidden text-saffron-accent">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-[100vh] flex items-end justify-start">
+<!-- Background Image -->
+<div class="absolute inset-0 w-full h-full bg-cover bg-center" data-alt="A dramatic, high-contrast cinematic photograph of an Indian Air Force Su-30MKI fighter jet taking off from a tarmac at dusk. The sky is a gradient of deep indigo and fiery orange. The aircraft is rendered in sharp focus, showcasing its sleek metallic gray fuselage and aerodynamic design. The lighting is moody and authoritative, fitting a premium digital museum aesthetic, with a subtle depth of field blurring the background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCeNpdhe503kmacA-I_uuUnX1yrYWWXHonnJEIBu0ROvPhpPRnwUrodPSU-RdYwIvbU6trpODil3IgD7JyGs9UdG7B3O7rmnMqxfROMaqbmW306UHY6NFiB0cErORpZ46M63AKPhEWp-1gSADR5dHFA0-3vZy8nkkFVxcpoeyiHP81ljDcFWLtmPBMBuuIiZAdUnsCWlBVT3gnbFZ1ZiD8gW7WdHLp4iLv6tKqvFVhDijnuBrsC9DcHuA')">
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal via-deep-charcoal/50 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full px-gutter max-w-container-max mx-auto pb-16">
+<h1 class="font-display-hero text-display-hero md:text-display-hero text-on-surface mb-stack-sm drop-shadow-lg">
+                Su-30MKI
+            </h1>
+<p class="font-headline-md text-headline-md text-saffron-accent mb-stack-lg max-w-2xl">
+                The Backbone of the Indian Air Force
+            </p>
+<!-- Spec Card (Glassmorphism) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 bg-glass-white backdrop-blur-[20px] border border-white/10 rounded-lg p-8 max-w-4xl hover:backdrop-brightness-125 transition-all duration-300">
+<div>
+<h3 class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest mb-2">Max Speed</h3>
+<p class="font-body-lg text-body-lg text-on-surface font-mono">Mach 2.0+</p>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest mb-2">Engine</h3>
+<p class="font-body-lg text-body-lg text-on-surface font-mono">2x AL-31FP turbofans</p>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest mb-2">Range</h3>
+<p class="font-body-lg text-body-lg text-on-surface font-mono">3,000 km</p>
+</div>
+</div>
+</div>
+</header>
+<!-- History Section -->
+<section class="w-full py-section-gap px-gutter bg-surface-dim">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4">
+<div class="sticky top-32">
+<span class="font-label-caps text-label-caps text-saffron-accent mb-stack-sm block">01 / ORIGINS</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-md">Strategic Induction</h2>
+</div>
+</div>
+<div class="md:col-span-8 flex flex-col gap-stack-lg">
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Inducted into the Indian Air Force in the early 2000s, the Sukhoi Su-30MKI represented a quantum leap in the nation's air superiority capabilities. Developed jointly by Russia's Sukhoi Design Bureau and India's Hindustan Aeronautics Limited (HAL), the 'MKI' stands for Modernizirovannyi Kommercheskiy Indskiy (Modernized Commercial Indian).
+                </p>
+<div class="p-8 border border-surface-variant rounded bg-surface-container-low">
+<p class="font-editorial-italic text-editorial-italic text-secondary">
+                        "The integration of Western, Israeli, and Indian avionics onto a robust Russian airframe created a uniquely formidable multirole fighter, customized for the specific strategic requirements of the subcontinent."
+                    </p>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Equipped with thrust-vectoring engines and canards, the Su-30MKI possesses extraordinary maneuverability. Its phased array radar and ability to carry a massive weapons payload, including the indigenous BrahMos supersonic cruise missile, cements its role as the primary deterrent in the IAF's arsenal.
+                </p>
+</div>
+</div>
+</section>
+<!-- Technical Specs Table -->
+<section class="w-full py-section-gap px-gutter bg-background border-t border-surface-variant">
+<div class="max-w-container-max mx-auto">
+<div class="mb-stack-lg flex items-baseline justify-between border-b border-surface-variant pb-stack-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Technical Specifications</h2>
+<span class="font-label-caps text-label-caps text-tertiary">DATA C. 2024</span>
+</div>
+<p class="font-label-caps text-[10px] text-legal-gray tracking-widest mb-6">SOURCE: HAL TECHNICAL DATASHEET / SUKHOI DESIGN BUREAU PUBLIC RELEASE / PIB ARCHIVES</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-0">
+<!-- Col 1 -->
+<div class="flex flex-col">
+<div class="flex justify-between py-4 border-b border-surface-variant/50">
+<span class="font-label-caps text-label-caps text-tertiary">Role</span>
+<span class="font-body-sm text-body-sm text-on-surface">Air Superiority Fighter</span>
+</div>
+<div class="flex justify-between py-4 border-b border-surface-variant/50">
+<span class="font-label-caps text-label-caps text-tertiary">Crew</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">2</span>
+</div>
+<div class="flex justify-between py-4 border-b border-surface-variant/50">
+<span class="font-label-caps text-label-caps text-tertiary">Length</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">21.9 m (71 ft 10 in)</span>
+</div>
+</div>
+<!-- Col 2 -->
+<div class="flex flex-col">
+<div class="flex justify-between py-4 border-b border-surface-variant/50">
+<span class="font-label-caps text-label-caps text-tertiary">Wingspan</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">14.7 m (48 ft 3 in)</span>
+</div>
+<div class="flex justify-between py-4 border-b border-surface-variant/50">
+<span class="font-label-caps text-label-caps text-tertiary">Empty Weight</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">18,400 kg</span>
+</div>
+<div class="flex justify-between py-4 border-b border-surface-variant/50">
+<span class="font-label-caps text-label-caps text-tertiary">Service Ceiling</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">17,300 m (56,800 ft)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section (Bento Grid) -->
+<section class="w-full py-section-gap px-gutter bg-surface-dim">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-lg">Visual Archive</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 auto-rows-[300px] gap-6">
+<!-- Large Feature -->
+<div class="md:col-span-8 row-span-2 relative group overflow-hidden rounded bg-surface-container">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic, wide-angle shot of two Su-30MKI fighter jets flying in tight formation high above a majestic, snow-capped mountain range. The lighting is bright and clear, emphasizing the sleek lines of the aircraft against a deep blue sky. High-contrast, premium digital museum aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAzccBXB-Kg6YrI5Mt5TofeFX4DhwsgPY3NAZtj0Xw1VG1U-GmsV5ZFR-mfnbQ-zjKPb4kKwH2ueQlt_Tm_JWJzJEUS0W6UflWRqofyn9-Opk-e3hGWL5W7IuZyA6Y54LLhIbzgWVQL5DMBsHpQBuCwzDi_St0rPZ1UurtzIULBRiSIKHfjfeYtaa5cI06L8Ae_oEOkasK8SQjSkc9N_OWkGtl28R7rexzC6yiXxe-NwqZ5zSYyEajfrg')"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<p class="font-label-caps text-label-caps text-saffron-accent">HIGH ALTITUDE PATROL</p>
+</div>
+</div>
+<!-- Small Top -->
+<div class="md:col-span-4 row-span-1 relative group overflow-hidden rounded bg-surface-container">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A close-up, highly detailed photograph of the Su-30MKI's twin AL-31FP turbofan engines viewed from the rear, showing the complex complex metallic textures and thrust vectoring nozzles. Moody, low-key lighting typical of a high-end aviation museum exhibit." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmpWuB8RtEOOpwzgLDc1NEOVO71slytbO1yuV0eHLYHH7I3NBaSN9TNUraTdthT0c1AMTc6hPS79_sxwvXf9JK9kBdhuXth07g0otMA3itAaj983cL0PbewmlF66i_T5KzgXSg2WhzR-G1KpXBOknhhE3giv93bGI4beCEy9lZjrNC-fKaOfgyRVJDxKhemnt-SUrprUUR_aJOxiGjDbuic28iuRMSX_Wz9Oxp7olBANJuk5OwMK8eAw')"></div>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<p class="font-label-caps text-label-caps text-saffron-accent">PROPULSION</p>
+</div>
+</div>
+<!-- Small Bottom -->
+<div class="md:col-span-4 row-span-1 relative group overflow-hidden rounded bg-surface-container">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A dramatic profile shot of an Su-30MKI performing a high-G maneuver, showing vapor trails forming over the wings. The aircraft is banked steeply against a cloudy, overcast sky. High contrast, sharp focus, cinematic military aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbzMz6jJ6oXvNSrSzwIeaPWyB8dJoW1Cm_5tvScM3SAuB9ol6qQKVsEKPShrlvl54yD3h2IsCB7UZtwvWwPVorvCQge4aVAPMldzSKwKHttgG4HW1S9jWnaYt8pF7BbJo7HPa6cskpgm6KDTo8cgBb9l1vLMBt3p11KS7uzye15PJ-bQXJew3sAcIQsd7i_Mup6iRRxhrdEBAygTg-w8YSdvsVMVak6Q4SgjX7ftEjqMN4fprHrgAe4A')"></div>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<p class="font-label-caps text-label-caps text-saffron-accent">AERODYNAMICS</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full relative mt-section-gap bg-surface-container-lowest border-t border-surface-variant">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg py-16 px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col gap-stack-md">
+<img alt="IAF Museum Logo" class="w-24 h-24 object-contain opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa2B1Lhd7dWMNL6A8rwCYM10Xfx13sS0ix4_1dqeGHWhTXqbCYPUNiegx5FmEJtYGxceqSv-hhqLUMm456EJCrkQhLalnQwFT38ooE0wtxColBltWG3klh_IIaHuCPhGOADMZwusac-WsQf74KpaxKf1W5Osc3wQf1FSw5xtFIYzonDEldrRwd_4EymmOL1qJ65jRDrxuW0Jbq_6J_vBwBAo5szBZv6apMpXV9mte8uhT-6TgcrWfrvw"/>
+<div class="font-headline-md text-headline-md text-on-surface opacity-80">
+                    IAF MUSEUM
+                </div>
+<p class="font-body-sm text-body-sm text-legal-gray max-w-md">
+                    Dedicated to preserving the history and technical legacy of Indian military aviation through digital archiving and cinematic presentation.
+                </p>
+</div>
+<div class="flex flex-col justify-between items-start md:items-end">
+<div class="flex gap-6 mb-stack-lg">
+<a class="font-label-caps text-[10px] tracking-widest text-legal-gray hover:text-on-surface transition-colors duration-200" href="archives.html">Archives</a>
+<a class="font-label-caps text-[10px] tracking-widest text-legal-gray hover:text-on-surface transition-colors duration-200" href="about.html">About</a>
+<a class="font-label-caps text-[10px] tracking-widest text-legal-gray hover:text-on-surface transition-colors duration-200" href="sources.html">Sources</a>
+<a class="font-label-caps text-[10px] tracking-widest text-legal-gray hover:text-on-surface transition-colors duration-200" href="legal-disclaimer.html">Legal</a>
+<a class="font-label-caps text-[10px] tracking-widest text-legal-gray hover:text-on-surface transition-colors duration-200" href="privacy-policy.html">Privacy</a>
+</div>
+<div class="text-left md:text-right">
+<p class="font-label-caps text-[10px] tracking-widest text-legal-gray max-w-md">
+                        © 2024 IAF INDEPENDENT FAN PORTAL. THIS IS AN INDEPENDENT FAN/INFORMATION SITE AND IS NOT AFFILIATED WITH THE INDIAN AIR FORCE OR GOVERNMENT OF INDIA. DATA SOURCED FROM PUBLIC DOMAIN (PIB, HAL, SUKHOI).
+                    </p>
+</div>
+</div>
+</div>
+</footer>
+<script src="global.js"></script>
+</body></html>
