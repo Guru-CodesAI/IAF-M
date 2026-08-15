@@ -1,11 +1,11 @@
 # 3D Models (large binary files)
-*.glb
-*.gltf
+# *.glb
+# *.gltf
 
 # Videos (large files)
-*.mp4
-*.mov
-*.avi
+# *.mp4
+# *.mov
+# *.avi
 
 # Audio (large files - bgm.mp3 is committed separately if small enough)
 # *.mp3
