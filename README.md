@@ -90,8 +90,7 @@ Then open `http://localhost:3000` (or `8080`).
 sukhoi_su-30mkk.glb
 dassault_rafale_c_f3.glb
 dassault_mirage_2000d_rmv.glb
-WhatsApp Video 2026-08-15 at 2.53.15 PM.mp4
-WhatsApp Video 2026-08-15 at 2.53.16 PM.mp4
+
 ```
 
 ---
@@ -120,7 +119,7 @@ IAF/
 ```
 
 ---
-
+Built by GURUNATHAN V
 ## Legal
 
 This portal is an independent fan project built for educational and informational purposes. All content is sourced from publicly available, open-source, and declassified materials including PIB archives and official press releases. No classified information is published or speculated upon.
